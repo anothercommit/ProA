@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="/">Formulario</a></li>
+                <li><a href="/vista1">Vista 1</a></li>
+                <li><a href="/vista2">Vista 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Cargue aquí su videojuego:</h1>
+
+        <div>
+            <form action="/" method="POST">
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="nombre" required><br>
+
+                <label for="dev">Desarrollador: </label>
+                <input type="text" name="dev" id="dev" required><br>
+
+                <label for="publisher">Publisher: </label>
+                <input type="text" name="publisher" id="publisher" required><br>
+
+                <label for="indie">Es indie? </label>
+                <input type="checkbox" name="indie" id="indie"><br>
+
+                <label for="precio">Precio en dólares: </label>
+                <input type="number" name="precio" id="precio" placeholder="Pon 0 si es gratis" required><br>
+
+                <label for="fecha">Fecha de lanzamiento: </label>
+                <input type="date" name="fecha" id="fecha" required><br>
+
+                <input type="submit" value="Añadir">
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <div>
+            <div>
+                <p>Todos los derechos reservados a Joaquín Domenech</p>
+                <a href="">Sobre mí</a>
+            </div>
+            <div>
+                <p><b>Contactame:</b></p>
+                <p>
+                    <a href="mailto:jdomenech@escuelasproa.edu.ar">Send mail</a>
+                    (jdomenech@escuelasproa.edu.ar)
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
