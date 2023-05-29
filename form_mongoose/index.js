@@ -32,6 +32,20 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+app.get('/videojuegos', async (req, res) => {
+  try {
+    const documentos = await Videojuego.find();
+    res.json(documentos);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error retrieving documentos');
+  }
+});
+
+app.get("/vista2", (req, res) => {
+  res.render("vista2");
+});
+
 app.post("/", (req, res) => {
   const nombre = req.body.nombre;
   const dev = req.body.dev;
@@ -39,11 +53,6 @@ app.post("/", (req, res) => {
   // const indie = req.body.indie;
   const precio = req.body.precio;
   const fecha = req.body.fecha;
-
-  if (!nombre || !dev || !publisher || !precio || !fecha) {
-    res.send("Error: Debe completar todo el formulario");
-    return;
-  }
 
   const videojuego = new Videojuego({
     nombre: nombre,

@@ -9,4 +9,8 @@ const videojuegoSchema = new mongoose.Schema({
   fecha: String,
 });
 
-module.exports = mongoose.model("Videojuego", videojuegoSchema);
+const Videojuego = mongoose.model('Videojuego', videojuegoSchema);
+
+// module.exports = mongoose.model("Videojuego", videojuegoSchema);
+
+module.exports = Videojuego;
