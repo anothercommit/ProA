@@ -15,7 +15,6 @@ mongoose.connect(
   },
 );
 
-// Middle-ware
 // const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
@@ -35,15 +34,13 @@ app.get("/", (req, res) => {
 app.get('/videojuegos', async (req, res) => {
   try {
     const documentos = await Videojuego.find();
-    res.json(documentos);
+
+    res.render("videojuegos", { videojuegos: documentos })
+    // res.json(documentos);
   } catch (error) {
     console.error(error);
     res.status(500).send('Error retrieving documentos');
   }
-});
-
-app.get("/vista2", (req, res) => {
-  res.render("vista2");
 });
 
 app.post("/", (req, res) => {
