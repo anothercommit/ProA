@@ -31,15 +31,15 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get('/videojuegos', async (req, res) => {
+app.get("/videojuegos", async (req, res) => {
   try {
     const documentos = await Videojuego.find();
 
-    res.render("videojuegos", { videojuegos: documentos })
+    res.render("videojuegos", { videojuegos: documentos });
     // res.json(documentos);
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error retrieving documentos');
+    res.status(500).send("Error retrieving documentos");
   }
 });
 
