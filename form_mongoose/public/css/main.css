@@ -21,7 +21,6 @@ nav ul li a {
 
 footer {
     width: 100%;
-    position: absolute;
     display: flex;
     background-color: #222;
     bottom: 0;
