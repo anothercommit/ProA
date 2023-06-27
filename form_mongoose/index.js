@@ -44,24 +44,25 @@ app.get("/videojuegos", async (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  // const nombre = req.body.nombre;
-  // const dev = req.body.dev;
-  // const publisher = req.body.publisher;
-  // const precio = req.body.precio;
-  // const fecha = req.body.fecha;
-
   const { nombre, dev, publisher, precio, fecha } = req.body;
 
-  const videojuego = new Videojuego({
-    nombre: nombre,
-    dev: dev,
-    publisher: publisher,
-    precio: precio,
-    fecha: fecha,
-  });
+  const videojuego = new Videojuego({ nombre, dev, publisher, precio, fecha });
 
   videojuego.save();
   console.log(videojuego);
 
   res.redirect("/");
+});
+
+app.delete('/books/:id', async (req, res) => {
+  try {
+    const deletedBook = await Book.findByIdAndRemove(req.params.id);
+    if (!deletedBook) {
+      res.status(404).json({ error: 'Book not found' });
+    } else {
+      res.json(deletedBook);
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred' });
+  }
 });
