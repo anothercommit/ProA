@@ -1,0 +1,6 @@
+[submodule "pixel_art"]
+	path = pixel_art
+	url = https://github.com/anothercommit/pixel_art
+[submodule "laberinto_recursivo"]
+	path = laberinto_recursivo
+	url = https://github.com/anothercommit/laberinto_recursivo
