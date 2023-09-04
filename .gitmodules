@@ -4,3 +4,6 @@
 [submodule "laberinto_recursivo"]
 	path = laberinto_recursivo
 	url = https://github.com/anothercommit/laberinto_recursivo
+[submodule "busqueda_binaria_recursiva"]
+	path = busqueda_binaria_recursiva
+	url = https://github.com/anothercommit/busqueda_binaria_recursiva.git
