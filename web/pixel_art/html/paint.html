@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../css/paint.css" rel="stylesheet" />
+		<title>Piant!</title>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="lienzo-usuario" class="lienzo"></div>
+			<div id="container-colores"></div>
+			<div id="lienzo-original" class="lienzo"></div>
+		</div>
+
+		<div id="container-botones">
+			<label for="checkbox">Grilla</label>
+			<input type="checkbox" id="checkbox-grilla" />
+
+			<button type="button" id="button-borrar" onclick="borrarTodo()">
+				Borrar todo
+			</button>
+			<button type="button" id="button-volver">
+				<a href="../home.html">Volver</a>
+			</button>
+		</div>
+
+		<script src="../js/paint.js"></script>
+	</body>
+</html>

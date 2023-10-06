@@ -1,0 +1,44 @@
+html {
+	color-scheme: dark;
+}
+
+#container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-items: center;
+	align-items: center;
+}
+
+#container-colores {
+	display: grid;
+	grid-auto-columns: 1fr;
+	align-items: center;
+	align-content: center;
+}
+
+.lienzo {
+	width: 600px;
+	height: 600px;
+	display: grid;
+	grid-template-columns: repeat(10, 10fr);
+	grid-template-rows: repeat(10, 10fr);
+	border: 2px solid black;
+}
+
+.color {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 2px solid;
+	user-select: none;
+	margin: 5px;
+}
+
+.item {
+	background-color: white;
+	user-select: none;
+}
+
+.mostrar-grilla {
+	border: 1px solid black;
+}

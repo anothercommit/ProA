@@ -1,0 +1,23 @@
+html {
+	color-scheme: dark;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.img {
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	margin: 4px;
+}
+
+#galeria {
+	width: 750px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
