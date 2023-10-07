@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6tOyQy69eT7lSi5AoFo2GxorzYmSm6Z4t7YpiolN5XndZtH4XbS+uFedzqPVStBC26FTY4mNTeXePfL7Nt7TRQ==",
+  "dgSpecHash": "0oO2pYYB+Ob4wXdX6Z/KfeRifay+5nNIU1VkR080OcYRTsDeTMuD4iyZzOvdTWF91POeJlUof68Ll3zGSDi2sw==",
   "success": true,
   "projectFilePath": "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj",
   "expectedPackageFiles": [
-    "/home/joaco/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.11/microsoft.aspnetcore.app.ref.7.0.11.nupkg.sha512"
+    "/home/joaco/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0-rc.1.23421.29/microsoft.aspnetcore.app.ref.8.0.0-rc.1.23421.29.nupkg.sha512"
   ],
   "logs": []
 }
