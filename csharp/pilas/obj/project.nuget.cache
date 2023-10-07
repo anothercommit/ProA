@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6tOyQy69eT7lSi5AoFo2GxorzYmSm6Z4t7YpiolN5XndZtH4XbS+uFedzqPVStBC26FTY4mNTeXePfL7Nt7TRQ==",
+  "success": true,
+  "projectFilePath": "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj",
+  "expectedPackageFiles": [
+    "/home/joaco/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.11/microsoft.aspnetcore.app.ref.7.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
