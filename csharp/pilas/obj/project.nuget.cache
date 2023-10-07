@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AS5oaF/N0YbDamrftChGlgklkz+2FglLoxXxtaKNSQSY1X6GMq9vVsMDI2gDbugqB8YJUfCSvXRjn/E68gcQ6g==",
+  "dgSpecHash": "0oO2pYYB+Ob4wXdX6Z/KfeRifay+5nNIU1VkR080OcYRTsDeTMuD4iyZzOvdTWF91POeJlUof68Ll3zGSDi2sw==",
   "success": true,
-  "projectFilePath": "/home/joaco/Dev/ProA/csharp/pilas/anashe/anashe.csproj",
+  "projectFilePath": "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj",
   "expectedPackageFiles": [
     "/home/joaco/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0-rc.1.23421.29/microsoft.aspnetcore.app.ref.8.0.0-rc.1.23421.29.nupkg.sha512"
   ],

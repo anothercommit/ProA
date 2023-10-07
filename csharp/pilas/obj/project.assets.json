@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joaco/Dev/ProA/csharp/pilas/anashe/anashe.csproj",
-      "projectName": "anashe",
-      "projectPath": "/home/joaco/Dev/ProA/csharp/pilas/anashe/anashe.csproj",
+      "projectUniqueName": "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj",
+      "projectName": "pilas",
+      "projectPath": "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj",
       "packagesPath": "/home/joaco/.nuget/packages/",
-      "outputPath": "/home/joaco/Dev/ProA/csharp/pilas/anashe/obj/",
+      "outputPath": "/home/joaco/Dev/ProA/csharp/pilas/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/joaco/.nuget/NuGet/NuGet.Config"
