@@ -1,5 +1,0 @@
-/home/joaco/Dev/ProA/csharp/pilas/obj/Debug/net7.0/pilas.GeneratedMSBuildEditorConfig.editorconfig
-/home/joaco/Dev/ProA/csharp/pilas/obj/Debug/net7.0/pilas.AssemblyInfoInputs.cache
-/home/joaco/Dev/ProA/csharp/pilas/obj/Debug/net7.0/pilas.AssemblyInfo.cs
-/home/joaco/Dev/ProA/csharp/pilas/obj/Debug/net7.0/pilas.csproj.CoreCompileInputs.cache
-/home/joaco/Dev/ProA/csharp/pilas/obj/Debug/net7.0/pilas.sourcelink.json

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj": {}
+    "/home/joaco/Dev/ProA/csharp/pilas/anashe/anashe.csproj": {}
   },
   "projects": {
-    "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj": {
+    "/home/joaco/Dev/ProA/csharp/pilas/anashe/anashe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj",
-        "projectName": "pilas",
-        "projectPath": "/home/joaco/Dev/ProA/csharp/pilas/pilas.csproj",
+        "projectUniqueName": "/home/joaco/Dev/ProA/csharp/pilas/anashe/anashe.csproj",
+        "projectName": "anashe",
+        "projectPath": "/home/joaco/Dev/ProA/csharp/pilas/anashe/anashe.csproj",
         "packagesPath": "/home/joaco/.nuget/packages/",
-        "outputPath": "/home/joaco/Dev/ProA/csharp/pilas/obj/",
+        "outputPath": "/home/joaco/Dev/ProA/csharp/pilas/anashe/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/joaco/.nuget/NuGet/NuGet.Config"
