@@ -1,0 +1,15 @@
+/home/joaco/Dev/ProA/csharp/guia3ro/bin/Debug/net8.0/guia3ro
+/home/joaco/Dev/ProA/csharp/guia3ro/bin/Debug/net8.0/guia3ro.deps.json
+/home/joaco/Dev/ProA/csharp/guia3ro/bin/Debug/net8.0/guia3ro.runtimeconfig.json
+/home/joaco/Dev/ProA/csharp/guia3ro/bin/Debug/net8.0/guia3ro.dll
+/home/joaco/Dev/ProA/csharp/guia3ro/bin/Debug/net8.0/guia3ro.pdb
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/guia3ro.GeneratedMSBuildEditorConfig.editorconfig
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/guia3ro.AssemblyInfoInputs.cache
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/guia3ro.AssemblyInfo.cs
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/guia3ro.csproj.CoreCompileInputs.cache
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/guia3ro.sourcelink.json
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/guia3ro.dll
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/refint/guia3ro.dll
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/guia3ro.pdb
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/guia3ro.genruntimeconfig.cache
+/home/joaco/Dev/ProA/csharp/guia3ro/obj/Debug/net8.0/ref/guia3ro.dll
