@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("guia3ro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50c46062821636937237a5cf16a30d400ff79ebb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("guia3ro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("guia3ro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
