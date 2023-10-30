@@ -7,52 +7,20 @@ namespace ColeccionesGenericas
 	{
 		static void Main()
 		{
-			// Console.Write("1 -> ");
+			// Console.Write("1: InvertirLista() -> ");
 			// Console.WriteLine(string.Join(", ", InvertirLista([1, 2, 3, 4])));
 
-			// Console.Write("2 -> ");
+			// Console.Write("2: EvaluarRpn() -> ");
+			// Console.WriteLine(EvaluarRpn("5 3 4 * + 7 -"));
+
+			// Console.Write("3: FiltrarCola() -> ");
 			// Console.WriteLine("\n" + string.Join(", ", FiltrarCola()));
-		}
 
-		static bool EsPalindrome()
-		{
-			string str = Console.ReadLine().ToLower();
+			// Console.Write("4: EsPalindrome() -> ");
+			// Console.WriteLine(EsPalindrome());
 
-			Stack<char> original = new(str);
-			Stack<char> invertida = new(original);
-
-			return original == invertida;
-		}
-
-		static int[] FiltrarCola()
-		{
-			Console.Write("Ingrese la cantidad de elementos: ");
-
-			int cantidad = int.Parse(Console.ReadLine());
-
-			Stack<int> stack = [];
-
-			Console.WriteLine($"Ingrese {cantidad} números:");
-
-			while (cantidad > 0)
-			{
-				string input = Console.ReadLine();
-
-				if (int.TryParse(input, out int num))
-				{
-					stack.Push(num);
-					cantidad--;
-				}
-				else
-					Console.WriteLine("¡Error! Por favor ingrese un int");
-			}
-
-			List<int> result = [];
-
-			foreach (int i in stack)
-				if (i % 2 == 0) result.Insert(0, i);
-
-			return [.. result];
+			// Console.Write("5: OrdenarCola() -> ");
+			Console.WriteLine(string.Join(", ", OrdenarCola(new Queue<int>([3, 1, 2, 0]), 1)));
 		}
 
 		static List<int> InvertirLista(List<int> list)
@@ -60,6 +28,32 @@ namespace ColeccionesGenericas
 			Stack<int> stack = new(list);
 
 			return new List<int>(stack);
+		}
+
+		static int[] FiltrarCola()
+		{
+			Queue<int> cola = [];
+			int cantidad = int.Parse(Console.ReadLine());
+
+			while (cantidad > 0)
+			{
+				string input = Console.ReadLine();
+
+				if (int.TryParse(input, out int num))
+				{
+					cola.Enqueue(num);
+					cantidad--;
+				}
+				else
+					Console.WriteLine("¡Error! Por favor ingrese un int");
+			}
+
+			Queue<int> result = [];
+
+			foreach (int i in cola)
+				if (i % 2 == 0) result.Enqueue(i);
+
+			return [.. result];
 		}
 
 		static double EvaluarRpn(string str)
@@ -115,6 +109,60 @@ namespace ColeccionesGenericas
 					break;
 			}
 			return result;
+		}
+
+		static bool EsPalindrome()
+		{
+			string str = Console.ReadLine().ToLower();
+
+			Queue<char> original = new(str);
+			Queue<char> invertida = new(str.ToArray().Reverse());
+
+			for (int i = original.Count; i > 0; i--)
+				if (original.Dequeue() != invertida.Dequeue())
+					return false;
+
+			return true;
+		}
+
+		static Queue<int> OrdenarCola(Queue<int> cola, sbyte orden)
+		{
+			Queue<int> resultado = [];
+			resultado.Enqueue(cola.Dequeue());
+			if (orden == 1)
+			{
+				for (int i = cola.Count; i > 0; i--)
+				{
+					Console.WriteLine("r: " + string.Join(", ", resultado));
+					Console.WriteLine("c: " + string.Join(", ", cola));
+
+					if (cola.Peek() < resultado.Peek())
+						resultado.Enqueue(cola.Dequeue());
+					else
+					{
+						int temp = resultado.Dequeue();
+						resultado.Enqueue(cola.Dequeue());
+						resultado.Enqueue(temp);
+					}
+				}
+			}
+
+			else if (orden == -1)
+			{
+				for (int i = cola.Count; i > 0; i--)
+				{
+					if (cola.Peek() > resultado.Peek())
+						resultado.Enqueue(cola.Dequeue());
+					else
+					{
+						int temp = resultado.Dequeue();
+						resultado.Enqueue(cola.Dequeue());
+						resultado.Enqueue(temp);
+					}
+				}
+			}
+
+			return resultado;
 		}
 	}
 }
