@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/guia_estructuras_genericas.csproj": {}
+    "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\guia_estructuras_genericas\\guia_estructuras_genericas.csproj": {}
   },
   "projects": {
-    "/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/guia_estructuras_genericas.csproj": {
+    "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\guia_estructuras_genericas\\guia_estructuras_genericas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/guia_estructuras_genericas.csproj",
+        "projectUniqueName": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\guia_estructuras_genericas\\guia_estructuras_genericas.csproj",
         "projectName": "guia_estructuras_genericas",
-        "projectPath": "/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/guia_estructuras_genericas.csproj",
-        "packagesPath": "/home/joaco/.nuget/packages/",
-        "outputPath": "/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/",
+        "projectPath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\guia_estructuras_genericas\\guia_estructuras_genericas.csproj",
+        "packagesPath": "C:\\Users\\proa_095\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\guia_estructuras_genericas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/joaco/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\proa_095\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -48,18 +48,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.0-rc.2.23480.2, 8.0.0-rc.2.23480.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
