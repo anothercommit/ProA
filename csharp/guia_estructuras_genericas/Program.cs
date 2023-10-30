@@ -19,14 +19,39 @@ namespace ColeccionesGenericas
 			// Console.WriteLine(EsPalindrome());
 
 			// Console.Write("5: OrdenarCola() -> ");
-			Console.WriteLine(string.Join(", ", OrdenarCola(new Queue<int>([3, 1, 2, 0]), 1)));
 		}
 
-		static List<int> InvertirLista(List<int> list)
+		static int BusquedaBinaria(int num, ArrayList<int> list)
 		{
-			Stack<int> stack = new(list);
+			if (list.Length == 0) return -1;
+			int left = 0;
+			int right = list.length;
 
-			return new List<int>(stack);
+			while (left <= right)
+			{
+				int index = Math.Floor(d: (left + right) / 2);
+				int medio = list[index];
+
+				if (num == medio) return index;
+				else if (num > medio) left = medio + 1;
+				else right = medio - 1;
+			}
+
+			return -1;
+		}
+
+		static bool EsPalindrome()
+		{
+			string str = Console.ReadLine().ToLower();
+
+			Queue<char> original = new(str);
+			Queue<char> invertida = new(str.ToArray().Reverse());
+
+			for (int i = original.Count; i > 0; i--)
+				if (original.Dequeue() != invertida.Dequeue())
+					return false;
+
+			return true;
 		}
 
 		static int[] FiltrarCola()
@@ -110,58 +135,11 @@ namespace ColeccionesGenericas
 			return result;
 		}
 
-		static bool EsPalindrome()
+		static List<int> InvertirLista(List<int> list)
 		{
-			string str = Console.ReadLine().ToLower();
+			Stack<int> stack = new(list);
 
-			Queue<char> original = new(str);
-			Queue<char> invertida = new(str.ToArray().Reverse());
-
-			for (int i = original.Count; i > 0; i--)
-				if (original.Dequeue() != invertida.Dequeue())
-					return false;
-
-			return true;
-		}
-
-		static Queue<int> OrdenarCola(Queue<int> cola, sbyte orden)
-		{
-			Queue<int> resultado = [];
-			resultado.Enqueue(cola.Dequeue());
-			if (orden == 1)
-			{
-				for (int i = cola.Count; i > 0; i--)
-				{
-					Console.WriteLine("r: " + string.Join(", ", resultado));
-					Console.WriteLine("c: " + string.Join(", ", cola));
-
-					if (cola.Peek() < resultado.Peek())
-						resultado.Enqueue(cola.Dequeue());
-					else
-					{
-						int temp = resultado.Dequeue();
-						resultado.Enqueue(cola.Dequeue());
-						resultado.Enqueue(temp);
-					}
-				}
-			}
-
-			else if (orden == -1)
-			{
-				for (int i = cola.Count; i > 0; i--)
-				{
-					if (cola.Peek() > resultado.Peek())
-						resultado.Enqueue(cola.Dequeue());
-					else
-					{
-						int temp = resultado.Dequeue();
-						resultado.Enqueue(cola.Dequeue());
-						resultado.Enqueue(temp);
-					}
-				}
-			}
-
-			return resultado;
+			return new List<int>(stack);
 		}
 	}
 }
