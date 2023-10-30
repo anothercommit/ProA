@@ -1,0 +1,15 @@
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/bin/Debug/net8.0/guia_estructuras_genericas
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/bin/Debug/net8.0/guia_estructuras_genericas.deps.json
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/bin/Debug/net8.0/guia_estructuras_genericas.runtimeconfig.json
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/bin/Debug/net8.0/guia_estructuras_genericas.dll
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/bin/Debug/net8.0/guia_estructuras_genericas.pdb
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/guia_estructuras_genericas.GeneratedMSBuildEditorConfig.editorconfig
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/guia_estructuras_genericas.AssemblyInfoInputs.cache
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/guia_estructuras_genericas.AssemblyInfo.cs
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/guia_estructuras_genericas.csproj.CoreCompileInputs.cache
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/guia_estructuras_genericas.sourcelink.json
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/guia_estructuras_genericas.dll
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/refint/guia_estructuras_genericas.dll
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/guia_estructuras_genericas.pdb
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/guia_estructuras_genericas.genruntimeconfig.cache
+/home/joaco/Dev/ProA/csharp/guia_estructuras_genericas/obj/Debug/net8.0/ref/guia_estructuras_genericas.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "guia_estructuras_genericas/1.0.0": {
+        "runtime": {
+          "guia_estructuras_genericas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "guia_estructuras_genericas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
