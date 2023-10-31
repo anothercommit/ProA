@@ -1,0 +1,15 @@
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\bin\Debug\net8.0\31-10-23_estructuras_genericas.exe
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\bin\Debug\net8.0\31-10-23_estructuras_genericas.deps.json
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\bin\Debug\net8.0\31-10-23_estructuras_genericas.runtimeconfig.json
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\bin\Debug\net8.0\31-10-23_estructuras_genericas.dll
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\bin\Debug\net8.0\31-10-23_estructuras_genericas.pdb
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\31-10-23_estructuras_genericas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\31-10-23_estructuras_genericas.AssemblyInfoInputs.cache
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\31-10-23_estructuras_genericas.AssemblyInfo.cs
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\31-10-23_estructuras_genericas.csproj.CoreCompileInputs.cache
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\31-10-23_estructuras_genericas.sourcelink.json
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\31-10-23_estructuras_genericas.dll
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\refint\31-10-23_estructuras_genericas.dll
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\31-10-23_estructuras_genericas.pdb
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\31-10-23_estructuras_genericas.genruntimeconfig.cache
+C:\Users\proa_095\Desktop\Dev\ProA\Examenes\31-10-23_estructuras_genericas\obj\Debug\net8.0\ref\31-10-23_estructuras_genericas.dll
