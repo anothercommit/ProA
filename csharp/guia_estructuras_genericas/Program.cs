@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Reflection.Metadata;
 using Microsoft.VisualBasic;
 
 namespace ColeccionesGenericas
@@ -7,29 +8,85 @@ namespace ColeccionesGenericas
 	{
 		static void Main()
 		{
-			// Console.Write("1: InvertirLista() -> ");
-			// Console.WriteLine(string.Join(", ", InvertirLista([1, 2, 3, 4])));
+			Console.Write("1: InvertirLista() -> ");
+			Console.WriteLine(string.Join(", ", InvertirLista([1, 2, 3, 4])));
 
-			// Console.Write("2: EvaluarRpn() -> ");
-			// Console.WriteLine(EvaluarRpn("5 3 4 * + 7 -"));
+			Console.Write("2: EvaluarRpn() -> ");
+			Console.WriteLine(EvaluarRpn("5 3 4 * + 7 -"));
 
-			// Console.Write("3: FiltrarCola() -> ");
-			// Console.WriteLine("\n" + string.Join(", ", FiltrarCola()));
+			Console.Write("3: FiltrarCola() -> ");
+			Console.WriteLine("\n" + string.Join(", ", FiltrarCola()));
 
-			// Console.Write("4: EsPalindrome() -> ");
-			// Console.WriteLine(EsPalindrome());
+			Console.Write("4: EsPalindrome() -> ");
+			Console.WriteLine(EsPalindrome());
 
-			// Console.Write("5: OrdenarCola() -> ¿Por qué con colas?");
+			Console.WriteLine("5: OrdenarCola() -> ¿Por qué con colas?");
 
-			// Console.Write("6: BusquedaBinaria() -> ");
-			// Console.WriteLine(BusquedaBinaria([0, 1, 2, 3], 3));
+			Console.Write("6: BusquedaBinaria() -> ");
+			Console.WriteLine(BusquedaBinaria([0, 1, 2, 3], 3));
 
-			// Console.Write("7: BusquedaLineal() -> ");
-			// Console.WriteLine(BusquedaLineal([0, 1, 2, 3], 3));
+			Console.Write("7: BusquedaLineal() -> ");
+			Console.WriteLine(BusquedaLineal([0, 1, 2, 3], 3));
 
 			Console.Write("8: SelectionSort() -> ");
 			ArrayList list = SelectionSort([0, 3, 1, 2]);
-			foreach (int i in list) Console.Write(i);
+			foreach (int i in list) Console.Write(i + " ");
+			Console.WriteLine();
+
+			Console.Write("9: BubbleSort() -> ");
+			Console.WriteLine(string.Join(' ', BubbleSort([2, 0, 3, 4, 1])));
+
+			Console.WriteLine("10: MulMatrices() -> ");
+
+			int[,] a = {
+				{3,2,1},
+				{2,1,0},
+			};
+			int[,] b = {
+				{1,2,3},
+				{3,4,4},
+			};
+			int[,] matriz = MultMatrices(a, b);
+
+			for (int y = 0; y < matriz.GetLength(0); y++)
+			{
+				for (int x = 0; x < matriz.GetLength(1); x++)
+					Console.Write(matriz[y, x] + " ");
+
+				Console.WriteLine();
+			}
+		}
+
+		static int[,] MultMatrices(int[,] m1, int[,] m2)
+		{
+			for (int y = 0; y < m1.GetLength(0); y++)
+				for (int x = 0; x < m1.GetLength(1); x++)
+					m1[y, x] = m1[y, x] * m2[y, x];
+
+			return m1;
+		}
+
+		static int[] BubbleSort(int[] arr)
+		{
+			int largo = arr.Length;
+			int ultimo;
+
+			do
+			{
+				ultimo = 0;
+				for (int i = 1; i < largo; i++)
+				{
+					if (arr[i - 1] > arr[i])
+					{
+						(arr[i - 1], arr[i]) = (arr[i], arr[i - 1]);
+						ultimo = i;
+					}
+				}
+				largo = ultimo;
+			}
+			while (ultimo >= 1);
+
+			return arr;
 		}
 
 		static ArrayList SelectionSort(ArrayList list)
