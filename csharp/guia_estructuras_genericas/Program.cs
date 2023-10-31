@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Microsoft.VisualBasic;
 
 namespace ColeccionesGenericas
 {
@@ -18,19 +19,50 @@ namespace ColeccionesGenericas
 			// Console.Write("4: EsPalindrome() -> ");
 			// Console.WriteLine(EsPalindrome());
 
-			// Console.Write("5: OrdenarCola() -> ");
+			// Console.Write("5: OrdenarCola() -> ¿Por qué con colas?");
+
+			// Console.Write("6: BusquedaBinaria() -> ");
+			// Console.WriteLine(BusquedaBinaria([0, 1, 2, 3], 3));
+
+			// Console.Write("7: BusquedaLineal() -> ");
+			// Console.WriteLine(BusquedaLineal([0, 1, 2, 3], 3));
+
+			Console.Write("8: SelectionSort() -> ");
+			ArrayList list = SelectionSort([0, 3, 1, 2]);
+			foreach (int i in list) Console.Write(i);
 		}
 
-		static int BusquedaBinaria(int num, ArrayList<int> list)
+		static ArrayList SelectionSort(ArrayList list)
 		{
-			if (list.Length == 0) return -1;
-			int left = 0;
-			int right = list.length;
+			for (int i = 0, count = list.Count; i < count; i++)
+			{
+				int min = i;
+				for (int j = i + 1; j < count; j++)
+					if ((int)list[j] < (int)list[min]) min = j;
+				(list[i], list[min]) = (list[min], list[i]);
+			}
+
+			return list;
+		}
+
+		static int BusquedaLineal(ArrayList list, int num)
+		{
+			for (int i = 0, count = list.Count; i < count; i++)
+				if ((int)list[i] == num) return i;
+
+			return -1;
+		}
+
+		static int BusquedaBinaria(ArrayList list, int num)
+		{
+			if (list.Count == 0) return -1;
+			double left = 0.0;
+			double right = list.Count;
 
 			while (left <= right)
 			{
-				int index = Math.Floor(d: (left + right) / 2);
-				int medio = list[index];
+				int index = Convert.ToInt32(Math.Floor((left + right) / 2));
+				int medio = (int)list[index];
 
 				if (num == medio) return index;
 				else if (num > medio) left = medio + 1;

@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\proa_095\\.nuget\\packages\\": {}
+    "/Users/juan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\guia_estructuras_genericas\\guia_estructuras_genericas.csproj",
+      "projectUniqueName": "/Users/juan/Joa/Dev/ProA/csharp/guia_estructuras_genericas/guia_estructuras_genericas.csproj",
       "projectName": "guia_estructuras_genericas",
-      "projectPath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\guia_estructuras_genericas\\guia_estructuras_genericas.csproj",
-      "packagesPath": "C:\\Users\\proa_095\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\guia_estructuras_genericas\\obj\\",
+      "projectPath": "/Users/juan/Joa/Dev/ProA/csharp/guia_estructuras_genericas/guia_estructuras_genericas.csproj",
+      "packagesPath": "/Users/juan/.nuget/packages/",
+      "outputPath": "/Users/juan/Joa/Dev/ProA/csharp/guia_estructuras_genericas/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\proa_095\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/juan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
