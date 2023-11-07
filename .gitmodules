@@ -1,9 +1,0 @@
-[submodule "pixel_art"]
-	path = web/pixel_art
-	url = https://github.com/anothercommit/pixel_art
-[submodule "laberinto_recursivo"]
-	path = recursion/laberinto_recursivo
-	url = https://github.com/anothercommit/laberinto_recursivo
-[submodule "guia_recursion"]
-	path = recursioin/guia_recursion
-	url = https://github.com/anothercommit/guia_recursion.git

@@ -1,0 +1,29 @@
+html {
+	color-scheme: dark;
+}
+
+#container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	align-items: center;
+}
+
+#laberinto {
+	width: 625px;
+	height: 625px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(7, 1fr);
+	border: 4px solid black;
+}
+
+#laberinto > div {
+	background-color: whitesmoke;
+	/* color: black; */
+	user-select: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+}
