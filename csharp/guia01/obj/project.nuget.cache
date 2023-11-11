@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jpLsroQuxnnIv7w8SBTMd36WMo24Uw/R1DjO7ybR9IInQNdIHDZcMDe7iv+wfDLhUQYDEr2/gBDJ2kjTslvvPg==",
+  "success": true,
+  "projectFilePath": "/home/joaco/Dev/ProA/csharp/guia01/guia01.csproj",
+  "expectedPackageFiles": [
+    "/home/joaco/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0-rc.2.23480.2/microsoft.aspnetcore.app.ref.8.0.0-rc.2.23480.2.nupkg.sha512"
+  ],
+  "logs": []
+}
