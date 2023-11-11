@@ -1,4 +1,4 @@
-﻿using System.Reflection.Metadata;
+﻿using System.Collections;
 
 namespace Guia01
 {
@@ -12,9 +12,36 @@ namespace Guia01
 			// Console.WriteLine(
 			// 	string.Join(", ", EliminateOdds([3, 4, 7, 9, 4, 11, 32]))
 			// );
-			Console.WriteLine(
-				string.Join(", ", EliminateOdds([3, 4, 7, 9, 4, 11, 32]))
-			);
+			// Console.WriteLine(RepeatLetters("casa"));
+			ArrayList listaArray = [];
+			listaArray.Add("casa");
+			listaArray.Add("bicicleta");
+			listaArray.Add(2);
+			listaArray.Add(4);
+			listaArray.Add("-21");
+			listaArray.Add(-32);
+			Console.WriteLine(OnlyNumbers(listaArray));
+		}
+
+		static int[] OnlyNumbers(ArrayList arrList)
+		{
+			Queue<int> result = [];
+
+			for (int i = 0, count = arrList.Count; i < count; i++)
+			{
+				if ((arrList[i] is int) == true)
+					result.Enqueue((int)arrList[i]);
+			}
+
+			return [.. result];
+		}
+
+		static string RepeatLetters(string str)
+		{
+			string result = "";
+			foreach (char c in str)
+				result += $"{c}{c}";
+			return result;
 		}
 
 		static int[] EliminateOdds(int[] arr)
