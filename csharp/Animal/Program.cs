@@ -8,14 +8,13 @@
             Mamifero mamifero = new();
             Oviparo oviparo = new();
             Vaca vaca = new();
+            Vaca vaca1 = new();
             Paloma paloma = new();
 
-            animal.Morir();
-            mamifero.Morir();
             vaca.Pastorear();
             vaca.Morir();
             vaca.Pastorear();
-            paloma.Volar();
+            vaca1.Pastorear();
         }
     }
 }

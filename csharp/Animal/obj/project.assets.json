@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\proa_095\\.nuget\\packages\\": {}
+    "/home/joaco/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\Animal\\Animal.csproj",
+      "projectUniqueName": "/home/joaco/Dev/ProA/csharp/Animal/Animal.csproj",
       "projectName": "Animal",
-      "projectPath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\Animal\\Animal.csproj",
-      "packagesPath": "C:\\Users\\proa_095\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\Animal\\obj\\",
+      "projectPath": "/home/joaco/Dev/ProA/csharp/Animal/Animal.csproj",
+      "packagesPath": "/home/joaco/.nuget/packages/",
+      "outputPath": "/home/joaco/Dev/ProA/csharp/Animal/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\proa_095\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/joaco/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -54,12 +54,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.0-rc.2.23480.2, 8.0.0-rc.2.23480.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "v3wbXD/lAa3kUXy7UZePTq5edYCorSot9lvQwEHiTRiXviVtlaguk3ZyCgowuvStLyMy4AylNMqPMth+Aggo6w==",
+  "dgSpecHash": "Dc+Ii1Vd54YqavJQuVWjDOWCCtrCsj0bfbSUQtwarCT0JVsu+Gh/1tVoDtNK6yVf/RbjQ4KTRzPURQG1JC8CLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\Animal\\Animal.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/joaco/Dev/ProA/csharp/Animal/Animal.csproj",
+  "expectedPackageFiles": [
+    "/home/joaco/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0-rc.2.23480.2/microsoft.aspnetcore.app.ref.8.0.0-rc.2.23480.2.nupkg.sha512"
+  ],
   "logs": []
 }
