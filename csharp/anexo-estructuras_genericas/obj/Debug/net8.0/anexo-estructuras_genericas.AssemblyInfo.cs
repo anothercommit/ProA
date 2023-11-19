@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("31-10-23_estructuras_genericas")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("anexo-estructuras_genericas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("31-10-23_estructuras_genericas")]
-[assembly: System.Reflection.AssemblyTitleAttribute("31-10-23_estructuras_genericas")]
+[assembly: System.Reflection.AssemblyProductAttribute("anexo-estructuras_genericas")]
+[assembly: System.Reflection.AssemblyTitleAttribute("anexo-estructuras_genericas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

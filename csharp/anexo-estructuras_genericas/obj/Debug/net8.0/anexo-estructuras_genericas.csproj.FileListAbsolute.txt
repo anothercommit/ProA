@@ -1,0 +1,15 @@
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/bin/Debug/net8.0/anexo-estructuras_genericas
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/bin/Debug/net8.0/anexo-estructuras_genericas.deps.json
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/bin/Debug/net8.0/anexo-estructuras_genericas.runtimeconfig.json
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/bin/Debug/net8.0/anexo-estructuras_genericas.dll
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/bin/Debug/net8.0/anexo-estructuras_genericas.pdb
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/anexo-estructuras_genericas.GeneratedMSBuildEditorConfig.editorconfig
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/anexo-estructuras_genericas.AssemblyInfoInputs.cache
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/anexo-estructuras_genericas.AssemblyInfo.cs
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/anexo-estructuras_genericas.csproj.CoreCompileInputs.cache
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/anexo-estructuras_genericas.sourcelink.json
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/anexo-estructuras_genericas.dll
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/refint/anexo-estructuras_genericas.dll
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/anexo-estructuras_genericas.pdb
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/anexo-estructuras_genericas.genruntimeconfig.cache
+/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/Debug/net8.0/ref/anexo-estructuras_genericas.dll
