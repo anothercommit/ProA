@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/anexo-estructuras_genericas.csproj": {}
+    "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\anexo-estructuras_genericas\\anexo-estructuras_genericas.csproj": {}
   },
   "projects": {
-    "/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/anexo-estructuras_genericas.csproj": {
+    "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\anexo-estructuras_genericas\\anexo-estructuras_genericas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/anexo-estructuras_genericas.csproj",
+        "projectUniqueName": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\anexo-estructuras_genericas\\anexo-estructuras_genericas.csproj",
         "projectName": "anexo-estructuras_genericas",
-        "projectPath": "/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/anexo-estructuras_genericas.csproj",
-        "packagesPath": "/Users/juan/.nuget/packages/",
-        "outputPath": "/Users/juan/Joa/Dev/ProA/csharp/anexo-estructuras_genericas/obj/",
+        "projectPath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\anexo-estructuras_genericas\\anexo-estructuras_genericas.csproj",
+        "packagesPath": "C:\\Users\\proa_095\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\proa_095\\Desktop\\Dev\\ProA\\csharp\\anexo-estructuras_genericas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/juan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\proa_095\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

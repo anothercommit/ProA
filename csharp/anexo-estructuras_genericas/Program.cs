@@ -1,23 +1,78 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace AnexoEstructurasGenericas
 {
 	class Program
 	{
+		struct Player
+		{
+			public int fuerza { get; }
+			private int destreza { get; }
+			private int constitucion { get; }
+			private int inteligencia { get; }
+			private int sabiduria { get; }
+			private int carisma { get; }
+
+			public Player()
+			{
+				fuerza = TirarDados();
+				destreza = TirarDados();
+				constitucion = TirarDados();
+				inteligencia = TirarDados();
+				sabiduria = TirarDados();
+				carisma = TirarDados();
+			}
+
+			readonly int TirarDados()
+			{
+				Random rnd = new();
+
+				int[] dados =
+				[
+					rnd.Next(1, 7),
+					rnd.Next(1, 7),
+					rnd.Next(1, 7),
+					rnd.Next(1, 7),
+				];
+
+				Index menor = 0;
+
+				for (int i = 1, length = dados.Length; i < length; i++)
+					if (dados[i] < dados[menor]) menor = i;
+
+				dados[menor] = 0;
+
+				return dados[0] + dados[1] + dados[2] + dados[3];
+			}
+		}
+
 		static void Main()
 		{
 			// Console.WriteLine(Atbash("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
 			// Console.WriteLine(CambiarBase(42, 10));
+			// Console.WriteLine(SeriesProduct("1027839564", 3));
+
+			Player p1 = new Player();
+			Console.WriteLine(p1.fuerza);
 		}
 
-		// static string SeriesProduct(string str, int n)
-		// {
-		// 	Stack<int> pila = [];
+		static int SeriesProduct(string str, int n)
+		{
+			Stack<int> pila = [];
+			int max = int.MinValue;
 
-		// 	foreach (char c in str)
-		// 		pila.Push(int.Parse(c.ToString()));
+			for (int i = 0, length = str.Length - n; i < length; i++)
+			{
+				for (int j = 0; j < n; j++)
+					pila.Push(int.Parse(str[i + j].ToString()));
 
-		// }
+				int thisMax = pila.Pop() * pila.Pop() * pila.Pop();
+				if (thisMax > max) max = thisMax;
+			}
+
+			return max;
+		}
 
 		static string CambiarBase(int n, int b)
 		{
