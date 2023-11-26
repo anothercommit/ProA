@@ -1,27 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data;
-
-namespace AnexoEstructurasGenericas
+﻿namespace AnexoEstructurasGenericas
 {
 	class Program
 	{
 		struct Player
 		{
-			public int fuerza { get; }
-			private int destreza { get; }
-			private int constitucion { get; }
-			private int inteligencia { get; }
-			private int sabiduria { get; }
-			private int carisma { get; }
+			public int Fuerza { get; }
+			private int Destreza { get; }
+			private int Constitucion { get; }
+			private int Inteligencia { get; }
+			private int Sabiduria { get; }
+			private int Carisma { get; }
 
 			public Player()
 			{
-				fuerza = TirarDados();
-				destreza = TirarDados();
-				constitucion = TirarDados();
-				inteligencia = TirarDados();
-				sabiduria = TirarDados();
-				carisma = TirarDados();
+				Fuerza = TirarDados();
+				Destreza = TirarDados();
+				Constitucion = TirarDados();
+				Inteligencia = TirarDados();
+				Sabiduria = TirarDados();
+				Carisma = TirarDados();
 			}
 
 			readonly int TirarDados()
@@ -49,12 +46,24 @@ namespace AnexoEstructurasGenericas
 
 		static void Main()
 		{
-			// Console.WriteLine(Atbash("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
-			// Console.WriteLine(CambiarBase(42, 10));
-			// Console.WriteLine(SeriesProduct("1027839564", 3));
+			Console.WriteLine(Atbash("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
+			Console.WriteLine(CambiarBase(42, 10));
+			Console.WriteLine(SeriesProduct("1027839564", 3));
 
-			Player p1 = new Player();
-			Console.WriteLine(p1.fuerza);
+			Player[] players = GameMaker(2);
+
+			Console.WriteLine("Fuerza p1: " + players[0].Fuerza);
+			Console.WriteLine("Fuerza p2: " + players[1].Fuerza);
+		}
+
+		static Player[] GameMaker(int pAmount)
+		{
+			List<Player> players = [];
+
+			for (int i = 0; i < pAmount; i++)
+				players.Add(new Player());
+
+			return [.. players];
 		}
 
 		static int SeriesProduct(string str, int n)
