@@ -1,0 +1,9 @@
+#imageToGuess {
+    filter: blur(0px);
+    width: 800px;
+    clip-path: inset(0px 0px 0px 0px);
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
