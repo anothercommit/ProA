@@ -1,16 +1,27 @@
-for (x = 0, cantidad = 10; x < cantidad; x++) {
-    const container = document.getElementById("container");
+"use strict";
 
-    const img = document.createElement("img");
+let cantidad = 8;
+let pasosX = 800 / cantidad;
+let pasosY = 400 / cantidad;
 
-    img.className = "imgGrid";
-    img.id = i;
-    img.style.border = "2px solid black";
-    img.style.backgroundColor = "red";
 
-    img.addEventListener("click", () => {
-        console.log("me tocan");
-    });
+for (let i = 0, x = 0; i < cantidad; i++, x += pasosX) {
+    for (let y = 400; y > 0; y -= pasosY) {
+        console.log(y);
+        const container = document.getElementById("container");
 
-    container.appendChild(img);
+        const img = document.createElement("img");
+        img.className = "imgGrid";
+        img.src = "img/better_call_morty.jpg";
+        img.style.clipPath = `inset(0px 0px ${y}px ${x}px)`;
+
+        img.addEventListener("click", () => {
+            removeBlur(img);
+        });
+        container.appendChild(img);
+    }
+}
+
+function removeBlur(el) {
+    el.style.filter = "blur(0px)";
 }
