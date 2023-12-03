@@ -1,27 +1,46 @@
 "use strict";
 
-let cantidad = 8;
-let pasosX = 800 / cantidad;
-let pasosY = 400 / cantidad;
+const slider = document.getElementById("cantidad");
+const textoPuntos = document.getElementById("puntos");
+const cambiarGrid = document.getElementById("cambiarGrid");
 
+let puntos = 0;
+let cantidad = slider.value;
 
-for (let i = 0, x = 0; i < cantidad; i++, x += pasosX) {
-    for (let y = 400; y > 0; y -= pasosY) {
-        console.log(y);
-        const container = document.getElementById("container");
+const container = document.getElementById("container");
 
-        const img = document.createElement("img");
-        img.className = "imgGrid";
-        img.src = "img/better_call_morty.jpg";
-        img.style.clipPath = `inset(0px 0px ${y}px ${x}px)`;
+crearGrilla(container, cantidad);
 
-        img.addEventListener("click", () => {
-            removeBlur(img);
+textoPuntos.innerText = slider.value;
+
+slider.addEventListener("input", () => {
+    textoPuntos.innerText = slider.value;
+    cantidad = slider.value;
+});
+
+cambiarGrid.onclick = () => {
+    container.querySelectorAll("*").forEach((child) => child.remove());
+    crearGrilla(container, cantidad);
+};
+
+function crearGrilla(container, cantidad) {
+    container.style.gridTemplateColumns = `repeat(${cantidad}, ${cantidad}fr)`;
+    const cantidadY = cantidad / 2;
+    container.style.gridTemplateRows = `repeat(${cantidadY}, ${cantidadY}fr)`;
+
+    for (let i = 0, total = cantidad * cantidadY; i < total; i++) {
+        const div = document.createElement("div");
+        div.className = "grid";
+        div.style.backdropFilter = `blur(20px)`;
+
+        div.addEventListener("click", () => {
+            removeBlur(div);
         });
-        container.appendChild(img);
+
+        container.appendChild(div);
     }
 }
 
 function removeBlur(el) {
-    el.style.filter = "blur(0px)";
+    el.style.backdropFilter = "blur(0)";
 }

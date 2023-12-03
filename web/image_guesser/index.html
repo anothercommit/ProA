@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Adivina la imagen</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adivina la imagen</title>
-    <link href="style.css" rel="stylesheet" />
-</head>
+    <body>
+        <h1>Revela la imagen y trata de adivinar</h1>
 
-<body>
-    <h1>Revela la imagen y trata de adivinar</h1>
+        <div id="container"></div>
+        <input id="cantidad" type="range" min="0" max="50" step="2" />
+        <p id="puntos">Puntos</p>
+        <button id="cambiarGrid">Cambiar grid</button>
 
-    <div id="container"></div>
-
-    <script src="main.js"></script>
-</body>
-
+        <script src="main.js"></script>
+    </body>
 </html>
