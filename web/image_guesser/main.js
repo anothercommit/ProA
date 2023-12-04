@@ -1,29 +1,56 @@
 "use strict";
 
 const slider = document.getElementById("cantidad");
+const labelCantidad = document.getElementById("labelCantidad");
+const inputGuess = document.getElementById("guess");
 const textoPuntos = document.getElementById("puntos");
-const cambiarGrid = document.getElementById("cambiarGrid");
+const textoPuntajeTotal = document.getElementById("puntajeTotal");
+const buttonGrid = document.getElementById("cambiarGrid");
+const buttonAdivinar = document.getElementById("submitGuess");
 
-let puntos = 0;
+const imagenActual = "cocodrilo";
+
+let puntos = 50;
+let puntajeTotal = 0;
 let cantidad = slider.value;
+cantidad = 0; // Para que ande fluido durante las pruebas
+
+textoPuntos.innerText = `Puntos: ${puntos}`;
+textoPuntajeTotal.innerText = `Puntaje total: ${puntajeTotal}`;
+labelCantidad.innerText = slider.value;
 
 const container = document.getElementById("container");
+container.style.backgroundImage = "url(./img/cocodrilo.jpg)";
 
-crearGrilla(container, cantidad);
+crearGrilla();
 
-textoPuntos.innerText = slider.value;
+buttonAdivinar.onclick = () => {
+    if (adivinar()) {
+        alert("¡Correcto! +" + puntos + " puntos");
+        siguienteImagen();
+    }
+
+    else {
+        alert("Incorrecto. Siguiente imagen");
+        siguienteImagen();
+    }
+
+}
 
 slider.addEventListener("input", () => {
-    textoPuntos.innerText = slider.value;
+    labelCantidad.innerHTML = slider.value;
     cantidad = slider.value;
 });
 
-cambiarGrid.onclick = () => {
+buttonGrid.onclick = () => {
     container.querySelectorAll("*").forEach((child) => child.remove());
-    crearGrilla(container, cantidad);
+    puntos = 50;
+    textoPuntos.innerText = "Puntaje: " + puntos;
+    crearGrilla();
 };
 
-function crearGrilla(container, cantidad) {
+function crearGrilla() {
+    container.querySelectorAll("*").forEach((child) => child.remove());
     container.style.gridTemplateColumns = `repeat(${cantidad}, ${cantidad}fr)`;
     const cantidadY = cantidad / 2;
     container.style.gridTemplateRows = `repeat(${cantidadY}, ${cantidadY}fr)`;
@@ -31,10 +58,12 @@ function crearGrilla(container, cantidad) {
     for (let i = 0, total = cantidad * cantidadY; i < total; i++) {
         const div = document.createElement("div");
         div.className = "grid";
-        div.style.backdropFilter = `blur(20px)`;
+        div.style.backdropFilter = `blur(15px)`;
 
         div.addEventListener("click", () => {
             removeBlur(div);
+            puntos -= (50 / cantidad);
+            textoPuntos.innerText = "Puntaje: " + puntos;
         });
 
         container.appendChild(div);
@@ -43,4 +72,19 @@ function crearGrilla(container, cantidad) {
 
 function removeBlur(el) {
     el.style.backdropFilter = "blur(0)";
+}
+
+function adivinar() {
+    if (inputGuess.value == imagenActual) return true;
+    else return false;
+}
+
+function siguienteImagen() {
+    puntajeTotal += puntos;
+    textoPuntajeTotal.innerText = puntajeTotal;
+    puntos = 50;
+    textoPuntos = puntos;
+    imagenActual = `./img/zorro.jpg`;
+    container.style.backgroundImage = `url(${imagenActual})`;
+    crearGrilla();
 }
