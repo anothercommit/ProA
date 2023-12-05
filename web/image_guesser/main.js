@@ -8,19 +8,20 @@ const textoPuntajeTotal = document.getElementById("puntajeTotal");
 const buttonGrid = document.getElementById("cambiarGrid");
 const buttonAdivinar = document.getElementById("submitGuess");
 
-const imagenActual = "cocodrilo";
+const imagenes = ["cocodrilo", "gato", "morty", "zorro"];
+let imagenActual = imagenes[Math.floor(Math.random() * imagenes.length)];
 
 let puntos = 50;
 let puntajeTotal = 0;
 let cantidad = slider.value;
-cantidad = 0; // Para que ande fluido durante las pruebas
+// cantidad = 0; // Para que ande fluido durante las pruebas
 
 textoPuntos.innerText = `Puntos: ${puntos}`;
 textoPuntajeTotal.innerText = `Puntaje total: ${puntajeTotal}`;
 labelCantidad.innerText = slider.value;
 
 const container = document.getElementById("container");
-container.style.backgroundImage = "url(./img/cocodrilo.jpg)";
+container.style.backgroundImage = `url(./img/${imagenActual}.jpg)`;
 
 crearGrilla();
 
@@ -28,14 +29,11 @@ buttonAdivinar.onclick = () => {
     if (adivinar()) {
         alert("¡Correcto! +" + puntos + " puntos");
         siguienteImagen();
-    }
-
-    else {
+    } else {
         alert("Incorrecto. Siguiente imagen");
         siguienteImagen();
     }
-
-}
+};
 
 slider.addEventListener("input", () => {
     labelCantidad.innerHTML = slider.value;
@@ -51,7 +49,9 @@ buttonGrid.onclick = () => {
 
 function crearGrilla() {
     container.querySelectorAll("*").forEach((child) => child.remove());
+
     container.style.gridTemplateColumns = `repeat(${cantidad}, ${cantidad}fr)`;
+
     const cantidadY = cantidad / 2;
     container.style.gridTemplateRows = `repeat(${cantidadY}, ${cantidadY}fr)`;
 
@@ -62,7 +62,7 @@ function crearGrilla() {
 
         div.addEventListener("click", () => {
             removeBlur(div);
-            puntos -= (50 / cantidad);
+            puntos -= Math.floor(50 / cantidad);
             textoPuntos.innerText = "Puntaje: " + puntos;
         });
 
@@ -75,7 +75,7 @@ function removeBlur(el) {
 }
 
 function adivinar() {
-    if (inputGuess.value == imagenActual) return true;
+    if (inputGuess.value.toLowerCase() == imagenActual) return true;
     else return false;
 }
 
@@ -83,8 +83,15 @@ function siguienteImagen() {
     puntajeTotal += puntos;
     textoPuntajeTotal.innerText = puntajeTotal;
     puntos = 50;
-    textoPuntos = puntos;
-    imagenActual = `./img/zorro.jpg`;
-    container.style.backgroundImage = `url(${imagenActual})`;
+    textoPuntos.innerText = puntos;
+
+    let nuevaImagen = Math.floor(Math.random() * imagenes.length);
+
+    while (imagenActual == imagenes[nuevaImagen])
+        nuevaImagen = Math.floor(Math.random() * imagenes.length);
+
+    imagenActual = imagenes[nuevaImagen];
+
+    container.style.backgroundImage = `url(./img/${imagenActual}.jpg)`;
     crearGrilla();
 }

@@ -1,12 +1,12 @@
+html {
+    color-scheme: dark;
+}
+
 #container {
     width: 1000px;
     height: 500px;
 
     display: grid;
-    /* grid-template-columns: repeat(10, 10fr);
-    grid-template-rows: repeat(5, 10fr); */
-
-    /* background-image: url("img/better_call_morty.jpg"); */
     background-size: contain;
 
     border: 2px solid black;

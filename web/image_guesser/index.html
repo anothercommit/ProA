@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Adivina la imagen</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adivina la imagen</title>
-    <link href="style.css" rel="stylesheet" />
-</head>
+    <body>
+        <h1>Revela la imagen y trata de adivinar</h1>
 
-<body>
-    <h1>Revela la imagen y trata de adivinar</h1>
+        <p>
+            Adivina cada persona en las 5 imágenes y consigue el mayor puntaje
+        </p>
 
-    <p>Adivina cada persona en las 5 imágenes y consigue el mayor puntaje</p>
+        <!-- Container para la grilla de la imagen -->
+        <div id="container"></div>
 
-    <!-- Container para la grilla de la imagen -->
-    <div id="container"></div>
+        <input
+            id="cantidad"
+            type="range"
+            name="cantidad"
+            min="0"
+            max="50"
+            step="10"
+        />
+        <label id="labelCantidad" for="cantidad">Cantidad</label>
 
-    <input id="cantidad" type="range" name="cantidad" min="0" max="50" step="10" />
-    <label id="labelCantidad" for="cantidad">Cantidad</label>
+        <button id="cambiarGrid">Cambiar grid</button>
 
+        <p id="puntos">Puntos</p>
+        <p id="puntajeTotal">Puntaje total:</p>
 
-    <p id="puntos">Puntos</p>
-    <p id="puntajeTotal">Puntaje total:</p>
+        <br />
+        <label for="guess">Introduzca el nombre de la persona</label>
+        <input
+            type="text"
+            name="guess"
+            id="guess"
+            placeholder="Nombre Apellido"
+        />
+        <button id="submitGuess" type="submit">Adivinar</button>
 
-    <button id="cambiarGrid">Cambiar grid</button>
-
-    <br>
-    <label for="guess">Introduzca el nombre de la persona</label>
-    <input type="text" name="guess" id="guess" placeholder="Nombre Apellido" />
-    <button id="submitGuess" type="submit">Adivinar</button>
-
-
-    <script src="main.js"></script>
-</body>
-
+        <script src="main.js"></script>
+    </body>
 </html>
