@@ -62,7 +62,8 @@ function crearGrilla() {
 
         div.addEventListener("click", () => {
             removeBlur(div);
-            puntos -= Math.floor(50 / cantidad);
+            if (puntos > 0) puntos -= 50 / cantidad;
+            else puntos = 0;
             textoPuntos.innerText = "Puntaje: " + puntos;
         });
 
