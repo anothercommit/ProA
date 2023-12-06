@@ -43,7 +43,7 @@ slider.addEventListener("input", () => {
 buttonGrid.onclick = () => {
     container.querySelectorAll("*").forEach((child) => child.remove());
     puntos = 50;
-    textoPuntos.innerText = "Puntaje: " + puntos;
+    textoPuntos.innerText = "Puntaje: " + puntos.toFixed(1);
     crearGrilla();
 };
 
@@ -64,7 +64,7 @@ function crearGrilla() {
             removeBlur(div);
             if (puntos > 0) puntos -= 50 / cantidad;
             else puntos = 0;
-            textoPuntos.innerText = "Puntaje: " + puntos;
+            textoPuntos.innerText = "Puntaje: " + puntos.toFixed(1);
         });
 
         container.appendChild(div);
@@ -82,7 +82,7 @@ function adivinar() {
 
 function siguienteImagen() {
     puntajeTotal += puntos;
-    textoPuntajeTotal.innerText = puntajeTotal;
+    textoPuntajeTotal.innerText = "Puntaje total: " + puntajeTotal.toFixed(1);
     puntos = 50;
     textoPuntos.innerText = puntos;
 
