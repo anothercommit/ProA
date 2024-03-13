@@ -22,5 +22,5 @@ soup = BeautifulSoup(res.content, 'html.parser').find_all('img', attrs={'srcset'
 images = [img["srcset"][:-3] for img in soup]
 
 
-for i in range(3):   
+for i in range(len(images)):   
     writeBinaryFile(f"Alena Aenami {i}.jpg", requests.get(images[i]))
