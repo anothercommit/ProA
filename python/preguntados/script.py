@@ -1,8 +1,9 @@
-import os
-import time as t
-import random as r
-import pprint as p
 import json
+import os
+import pprint as p
+import random as r
+import time as t
+
 import requests
 from dotenv import load_dotenv
 

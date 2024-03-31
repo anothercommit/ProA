@@ -10,24 +10,24 @@ def selFigura():
             continue
 
         if figura == 1:
-            p[0]['figura'] = "x"
-            p[1]['figura'] = "o"
+            p[0]["figura"] = "x"
+            p[1]["figura"] = "o"
             break
         elif figura == 2:
-            p[0]['figura'] = "o"
-            p[1]['figura'] = "x"
+            p[0]["figura"] = "o"
+            p[1]["figura"] = "x"
             break
         else:
             print("¡Ese no es un número válido! Intente de nuevo")
 
 
 def printTablero():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
 
     t = tablero[:]
     for i in range(9):
-        t[''.join(t).index(" . ") + 1] = f"{jugadas[i]}"
-    print(''.join(t))
+        t["".join(t).index(" . ") + 1] = f"{jugadas[i]}"
+    print("".join(t))
 
 
 def newMove(figura):
@@ -50,11 +50,11 @@ def checkWin():
 
     for i in range(3):
         # Filas
-        if j[i*3] != " " and j[i*3] == j[i*3+1] == j[i*3+2]:
+        if j[i * 3] != " " and j[i * 3] == j[i * 3 + 1] == j[i * 3 + 2]:
             return True
 
         # Columnas
-        elif j[i] != " " and j[i] == j[i+3] == j[i+6]:
+        elif j[i] != " " and j[i] == j[i + 3] == j[i + 6]:
             return True
 
     # Diagonales
@@ -79,7 +79,7 @@ def playLoop():
 
     while True:
         print(f"Turno de {p[currentP]['nombre']}")
-        newMove(p[currentP]['figura'])
+        newMove(p[currentP]["figura"])
         printTablero()
 
         if checkWin():
@@ -94,17 +94,14 @@ def playLoop():
 
 
 p = [
-    {'nombre': '', 'figura': ''},
-    {'nombre': '', 'figura': ''},
+    {"nombre": "", "figura": ""},
+    {"nombre": "", "figura": ""},
 ]
 
-jugadas = [
-    " ", " ", " ",
-    " ", " ", " ",
-    " ", " ", " "
-]
+jugadas = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
-tablero = list("""
+tablero = list(
+    """
 -------------   -------------
 | . | . | . |   | 1 | 2 | 3 |
 -------------   -------------
@@ -113,12 +110,13 @@ tablero = list("""
 | . | . | . |   | 7 | 8 | 9 |
 -------------   -------------
 
-""")
+"""
+)
 
-p[0]['nombre'] = input("(p1) Escribe tu nombre: ")
+p[0]["nombre"] = input("(p1) Escribe tu nombre: ")
 
 selFigura()
 
-p[1]['nombre'] = input("(p2) Escribe tu nombre: ")
+p[1]["nombre"] = input("(p2) Escribe tu nombre: ")
 
 playLoop()
