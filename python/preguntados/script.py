@@ -1,6 +1,7 @@
 import json
 import os
-import pprint as p
+
+# import pprint as p
 import random as r
 import time as t
 
@@ -53,7 +54,7 @@ def getOneDevFourGames():
         game = getRandomGame(dev[1])
         games.append({"name": game["name"], "dev": dev[0]})
 
-    return {"answer": r.choice(games)["dev"], "games": (*games,)}
+    return (*games,)
 
 
 def writePointHistory(nombre: str, puntaje: str):
@@ -71,30 +72,29 @@ def gameLoop():
     puntaje = 0
     for _ in range(4):
         # temp = getOneDevFourGames()
-        temp = {
-            "answer": "Team Cherry",
-            "games": (
-                {"dev": "Valve Software", "name": "Counter-Strike: Condition Zero"},
-                {"dev": "Team Cherry", "name": "Hollow Knight"},
-                {"dev": "FromSoftware", "name": "Enchanted Arms"},
-                {"dev": "Ubisoft Montreal", "name": "Prince of Persia (2008)"},
-            ),
-        }
+        temp = (
+            {"dev": "Valve Software", "name": "Counter-Strike: Condition Zero"},
+            {"dev": "Team Cherry", "name": "Hollow Knight"},
+            {"dev": "FromSoftware", "name": "Enchanted Arms"},
+            {"dev": "Ubisoft Montreal", "name": "Prince of Persia (2008)"},
+        )
 
-        print(f"\nCual de estos juegos fue desarrollado por {temp['answer']}")
+        rightAns = r.choice(temp)["dev"]
+
+        print(f"\nCual de estos juegos fue desarrollado por {rightAns}")
         start = t.time()
 
         for i in range(4):
-            print(f"{i+1}) {temp['games'][i]['name']}")
+            print(f"{i+1}) {temp[i]['name']}")
 
         ans = int(input("1-4: "))
         suma = (50 - int(t.time() - start)) * 10
 
-        if temp["games"][ans - 1]["dev"] == temp["answer"]:
+        if temp[ans - 1]["dev"] == rightAns:
             print(f"✅Correcto! +{suma}")
             puntaje += suma
         else:
-            print(f"❌Incorrecto!")
+            print("❌Incorrecto!")
 
     print(f"Jugadxr: {player};\tPuntaje: {puntaje}")
 
