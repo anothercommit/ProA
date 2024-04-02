@@ -36,6 +36,24 @@ headers = {
 }
 
 
+def writePointHistory(nombre: str, puntaje: str):
+    try:
+        with open(".log.txt", "r") as file:
+            content = file.read()
+            try:
+                start = content.index(nombre) + len(nombre) + 2
+                end = content.index("\n", start)
+                content = content[:start] + puntaje + content[end:]
+            except:
+                content += f"{nombre}: {puntaje}\n"
+
+        with open(".log.txt", "w") as file:
+            file.write(content)
+    except:
+        with open(".log.txt", "w") as file:
+            file.write(f"{nombre}: {puntaje}\n")
+
+
 def getRandomGame(dev: str):
     url = f"https://api.rawg.io/api/games?key={API_KEY}&exclude_additions=true&developers={dev}"
     print("-", end="")
@@ -55,16 +73,6 @@ def getOneDevFourGames():
         games.append({"name": game["name"], "dev": dev[0]})
 
     return (*games,)
-
-
-def writePointHistory(nombre: str, puntaje: str):
-    with open(".log.txt", "w") as file:
-        file.write(f"{nombre}: {puntaje}\n")
-
-    with open(".log.txt", "r") as file:
-        file_contents = file.read()
-
-    return file_contents
 
 
 def gameLoop():
@@ -97,6 +105,7 @@ def gameLoop():
             print("❌Incorrecto!")
 
     print(f"Jugadxr: {player};\tPuntaje: {puntaje}")
+    writePointHistory(player, str(puntaje))
 
 
 load_dotenv()
