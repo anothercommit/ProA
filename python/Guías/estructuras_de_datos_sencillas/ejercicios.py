@@ -9,11 +9,9 @@ def partList(l: list, k: int) -> list:
             mayor.append(n)
     return menor + mayor
 
-
 # ej2
 def rotateList(l: list[int], k: int) -> list[int]:
     return l[k:] + l[:k]
-
 
 # ej3
 def sumMatrix(m1: list, m2: list):
@@ -25,3 +23,6 @@ def sumMatrix(m1: list, m2: list):
                 print("¡Error (sumMatrix)! Las matrices deben tener el mismo tamaño")
                 return None
     return m1
+
+# ej4
+
