@@ -3,12 +3,12 @@ from random import randint
 
 def mainLoop():
     intentos = 0
-    dimensiones = setDimensions()
-    matriz = createMatrix(dimensiones[0], dimensiones[1])
-    barco = {"x": randint(0, dimensiones[0] - 1), "y": randint(0, dimensiones[1] - 1)}
+    dim = setDimensions()
+    matriz = createMatrix(dim["f"], dim["c"])
+    barco = {"x": randint(0, dim["f"] - 1), "y": randint(0, dim["c"] - 1)}
     while True:
         printMatrix(matriz)
-        move = makeGuess()
+        move = makeGuess(dim)
         if move == barco:
             print(f"¡Ganaste en {intentos} intento/s! el barco estaba en {barco}")
             printMatrixWithShip(matriz, barco)
@@ -20,24 +20,32 @@ def mainLoop():
 
 
 def setDimensions():
-    filas = 0
-    columnas = 0
+    dim = {}
     while True:
         try:
-            filas = int(input("Ingrese la cantidad de filas que desea: "))
-            columnas = int(input("Ingrese la cantidad de columnas que desea: "))
+            dim["f"] = int(input("Ingrese la cantidad de filas que desea: "))
+            dim["c"] = int(input("Ingrese la cantidad de columnas que desea: "))
         except:
             print("¡Eso no es un número! vuelva a intentar")
         else:
-            if filas > 0 or columnas > 0:
-                return [filas, columnas]
+            if dim["f"] > 0 or dim["c"] > 0:
+                return dim
             else:
                 print("No puede introducir un número menor a 0. Vuelva a intentar")
 
 
-def makeGuess() -> dict[str, int]:
-    x = int(input("Eliga a donde atacar en x: "))
-    y = int(input("Eliga a donde atacar en y: "))
+def makeGuess(d) -> dict[str, int]:
+    while(True):
+        try:
+            x = int(input("Eliga a donde atacar en x: "))
+            y = int(input("Eliga a donde atacar en y: "))
+        except:
+            print("¡Eso no es un número!")
+        else:
+            if 0 <= y < d["c"] and 0 <= x < d["f"]:
+                break
+            else:
+                print("Número por fuera de las dimensiones de la matriz. Intente de nuevo")
     return {"x": x, "y": y}
 
 
