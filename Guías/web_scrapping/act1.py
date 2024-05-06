@@ -3,16 +3,12 @@ import pyperclip
 from bs4 import BeautifulSoup
 
 
-def writeParsedFile(name, res):
-    res = BeautifulSoup(res.content, "html.parser")
-    with open(name, "w", encoding="utf-8") as file:
-        content = str(res.prettify())
+def guardarPagina(num, req):
+    soup = BeautifulSoup(req.content, "html.parser")
+
+    with open(f"{num}.html", "w", encoding="utf-8") as file:
+        content = str(soup.prettify())
         file.write(content)
-
-
-def writeBinaryFile(name, res):
-    with open(name, "wb") as file:
-        file.write(res.content)
 
 
 headers = {
@@ -42,15 +38,18 @@ headers = {
     "Accept-Language": "es,en-US;q=0.9,en;q=0.8",
 }
 
+descargas = 0
+
 while True:
     url = pyperclip.waitForNewPaste()
-    res = requests.get(url, headers=headers)
+    req = requests.get(url, headers=headers)
 
     try:
-        res.raise_for_status()
+        req.raise_for_status()
     except:
         print("Not able to connect to: ", url)
         continue
 
-    print(url)
-    # writeBinaryFile("artStation.html", res)
+    descargas += 1
+    print(url, "\n", descargas)
+    guardarPagina(descargas, req)

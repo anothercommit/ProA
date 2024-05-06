@@ -1,17 +1,14 @@
 import requests
+import pyperclip
 from bs4 import BeautifulSoup
 
 
-def writeParsedFile(name, res):
-    res = BeautifulSoup(res.content, "html.parser")
-    with open(name, "w", encoding="utf-8") as file:
-        content = str(res.prettify())
+def buscarParrafos(num, req):
+    soup = BeautifulSoup(req.content, "html.parser")
+
+    with open(f"{num}.html", "w", encoding="utf-8") as file:
+        content = str(soup.prettify())
         file.write(content)
-
-
-def writeBinaryFile(name, req):
-    with open(name, "wb") as file:
-        file.write(req.content)
 
 
 headers = {
@@ -41,15 +38,18 @@ headers = {
     "Accept-Language": "es,en-US;q=0.9,en;q=0.8",
 }
 
-url = "https://www.artstation.com/aenamiart"
-res = requests.get(url, headers=headers)
-res.raise_for_status()
+descargas = 0
 
-a = "gallery-grid-link"
-soup = BeautifulSoup(res.content, "html.parser").find_all("a", attrs={"class": True})
+while True:
+    url = pyperclip.waitForNewPaste()
+    req = requests.get(url, headers=headers)
 
-# writeParsedFile('artStation.html', res)
+    try:
+        req.raise_for_status()
+    except:
+        print("Not able to connect to: ", url)
+        continue
 
-for s in soup:
-    # writeBinaryFile(f"Alena Aenami {i}.jpg", requests.get(images[i]))
-    print(s["class"])
+    descargas += 1
+    print(url, "\n", descargas)
+    guardarPagina(descargas, req)
