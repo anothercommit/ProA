@@ -1,4 +1,5 @@
 import requests
+import re
 import pyperclip
 from bs4 import BeautifulSoup
 
@@ -38,6 +39,11 @@ while True:
     except:
         print("Not able to connect to: ", url)
         continue
-    
-    soup = BeautifulSoup(req.content, "html.parser")
-    parrafos = soup.find_all(href=) # ver como usar el modulo re 
+
+    soup = BeautifulSoup(
+        "<a href='/noticia/2024/05/08/el-gobierno-les-descontara-el-dia-a-los-empleados-estatales-que-adhieran-al-paro-general'>",
+        "html.parser",
+    )
+    parrafos = soup.find_all(
+        href=re.compile("https://www.filo.news/noticia/")
+    )  # ver como usar el modulo re
