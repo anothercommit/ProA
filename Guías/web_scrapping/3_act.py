@@ -40,10 +40,7 @@ while True:
         print("Not able to connect to: ", url)
         continue
 
-    soup = BeautifulSoup(
-        "<a href='/noticia/2024/05/08/el-gobierno-les-descontara-el-dia-a-los-empleados-estatales-que-adhieran-al-paro-general'>",
-        "html.parser",
-    )
-    parrafos = soup.find_all(
-        href=re.compile("https://www.filo.news/noticia/")
-    )  # ver como usar el modulo re
+    soup = BeautifulSoup(req.content, "html.parser")
+    parrafos = soup.find_all(href=re.compile("https://www.filo.news/noticia/"))
+
+    print(parrafos)
