@@ -1,12 +1,12 @@
-import requests
-import pyperclip
-from bs4 import BeautifulSoup
+    import requests
+    import pyperclip
+    from bs4 import BeautifulSoup
 
 
-def guardarPagina(num, req):
-    soup = BeautifulSoup(req.content, "html.parser")
+    def guardarPagina(num, req):
+        soup = BeautifulSoup(req.content, "html.parser")
 
-    with open(f"{num}.html", "w", encoding="utf-8") as file:
+        with open(f"{num}.html", "w", encoding="utf-8") as file:
         content = str(soup.prettify())
         file.write(content)
 
