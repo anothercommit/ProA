@@ -43,7 +43,8 @@ headers = {
     "Accept-Language": "es,en-US;q=0.9,en;q=0.8",
 }
 
-URL = pyperclip.waitForPaste()
+# URL = pyperclip.waitForPaste()
+URL = "https://www.filo.news/"
 
 # while True:
 #     URL = pyperclip.waitForPaste()
@@ -52,3 +53,12 @@ URL = pyperclip.waitForPaste()
 #     noticias = sopa.find_all("<a>", href=re.compile("/noticia/"))
 
 #     print(noticias)
+
+sopa = getPageContent()
+# sopa = BeautifulSoup(
+#     '<a href="/noticia/2024/05/13/adorni-sobre-el-crimen-lesboodiante-en-barracas-no-me-gusta-definirlo-como-un-atentado-a-determinado-colectivo">',
+#     "html.parser",
+# )
+noticias = sopa.find_all(href=re.compile(r"/noticia/"))
+
+print(noticias)
