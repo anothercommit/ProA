@@ -7,20 +7,20 @@ from bs4 import BeautifulSoup
 def getPageContent(name="filo.news.html"):
     try:
         with open(name, "r") as file:
-            return BeautifulSoup(file.read(), "html.parser")
+            return BeautifulSoup(file.read(), "lxml")
 
     except Exception:
         writePage()
 
     with open(name, "r") as file:
-        return BeautifulSoup(file.read(), "html.parser")
+        return BeautifulSoup(file.read(), "lxml")
 
 
 def writePage():
     try:
         res = requests.get(URL, headers=headers)
         res.raise_for_status()
-        soup = BeautifulSoup(res.content, "html.parser")
+        soup = BeautifulSoup(res.content, "lxml")
 
     except Exception:
         print("Not able to connect to: ", URL)
