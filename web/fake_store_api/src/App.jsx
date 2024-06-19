@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import Card from "./components/Card";
+import Contador from './components/Contador';
 
 export default function App() {
-    const [data, setData] = useState([]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products/1")
+        fetch("https://fakestoreapi.com/products?limit=6")
             .then(res => res.json())
-            .then(json => setData(json))
+            .then(json => setProducts(json))
     }, []);
 
-    console.log(data)
-
     return (
-        <Card key={data.id} title={data.title} price={data.price} image={data.image} />
+        <>
+            <Contador />
+            {
+                products.map(p => (
+                    <Card key={p.id} product={p} />
+                ))
+            }
+        </>
     );
 }

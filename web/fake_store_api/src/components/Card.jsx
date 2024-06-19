@@ -1,9 +1,11 @@
-export default function Card({ title, price, image }) {
+import './Card.css'
+
+export default function Card({ product }) {
     return (
-        <div>
-            <h3>{title}</h3>
-            <p>{price}</p>
-            <img src={image} />
+        <div className="card-container">
+            <h3>{product.title}</h3>
+            <p>{product.price}</p>
+            <img src={product.image} width="200px" />
         </div >
     );
 }
