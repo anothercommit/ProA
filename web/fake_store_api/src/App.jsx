@@ -9,15 +9,30 @@ export default function App() {
         fetch(`https://fakestoreapi.com/products?limit=${count}`)
             .then(res => res.json())
             .then(json => setProducts(json))
-    }, [count]);
+    }, []);
+
+    function decrementCount() {
+        setCount(count - 1);
+    }
+
+    function incrementCount() {
+        setCount(count + 1);
+
+        if (count > products.length) {
+            const newProduct = fetch(`https://fakestoreapi.com/products/${count}`).then(res => res.json())
+            setProducts(prevProducts => [...prevProducts, newProduct])
+        }
+    }
 
     return (
         <>
-            <button onClick={() => setCount(count - 1)}>-</button>
-            <span>{count}</span>
-            <button onClick={() => setCount(count + 1)}>+</button>
+            <button onClick={decrementCount}>-</button>
+            <span> {count} </span>
+            <button onClick={incrementCount}>+</button>
+
+            {console.log(products)}
             {
-                products.map((p, i) => (
+                products.slice(0, count).map((p, i) => (
                     <Card key={p.id} product={p} num={i + 1} />
                 ))
             }
