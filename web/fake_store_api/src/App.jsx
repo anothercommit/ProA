@@ -13,14 +13,14 @@ export default function App() {
 
     return (
         <>
+            <button onClick={() => setCount(count - 1)}>-</button>
+            <span>{count}</span>
+            <button onClick={() => setCount(count + 1)}>+</button>
             {
-                products.map(p => (
-                    <Card key={p.id} product={p} />
+                products.map((p, i) => (
+                    <Card key={p.id} product={p} num={i + 1} />
                 ))
             }
-            <button onClick={setCount(count + 1)}>+</button>
-            <span>{count}</span>
-            <button onClick={setCount(count - 1)}>-</button>
         </>
     );
 }
