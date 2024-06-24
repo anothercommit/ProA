@@ -19,9 +19,11 @@ export default function App() {
         setCount(count + 1);
 
         if (count > products.length) {
-            const newProduct = fetch(`https://fakestoreapi.com/products/${count}`).then(res => res.json())
+            const newProduct = fetch(`https://fakestoreapi.com/products/${count}`)
+                .then(res => res.json())
             setProducts(prevProducts => [...prevProducts, newProduct])
         }
+        console.log("api call con count: ", count)
     }
 
     return (
@@ -33,7 +35,10 @@ export default function App() {
             {console.log(products)}
             {
                 products.slice(0, count).map((p, i) => (
-                    <Card key={p.id} product={p} num={i + 1} />
+                    <>
+                        <Card key={p.id} product={p} />
+                        <small>{i + 1}</small>
+                    </>
                 ))
             }
         </>
