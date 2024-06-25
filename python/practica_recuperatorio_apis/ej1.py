@@ -14,11 +14,6 @@ def get_num_descarga():
             return 1
 
 
-def actualizar_num_descarga():
-    with open(LOG_FILENAME, "w") as file:
-        file.write(str(numero_descarga + 1))
-
-
 def write_post(json_object):
     filename = f"{DESCARGAS}post_{numero_descarga}.json"
 
@@ -47,4 +42,5 @@ diccionario = json.loads(res.content)
 write_post(diccionario)
 print(diccionario)
 
-actualizar_num_descarga()
+with open(LOG_FILENAME, "w") as file:
+    file.write(str(numero_descarga + 1))
