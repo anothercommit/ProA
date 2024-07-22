@@ -1,0 +1,21 @@
+:root {
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-height: 100vh;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    border-color: #646cff;
+}
