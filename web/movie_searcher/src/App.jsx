@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 
 // API key: 1dcbcd87
 
@@ -19,7 +18,7 @@ function App() {
 
     useEffect(() => {
         console.log(searchValue)
-        fetch(`http://www.omdbapi.com/?apikey=1dcbcd87&t=${searchValue}`)
+        fetch(`http://www.omdbapi.com/?apikey=1dcbcd87&s=${searchValue}`)
             .then(res => res.json())
             .then(json => setMovies([...movies, json]))
             .then(console.log(movies))
@@ -28,8 +27,6 @@ function App() {
     return (
         <>
             <label htmlFor="movie-search">Busque el nombre de una peli</label>
-            <br />
-            <br />
             <form action="">
                 <input
                     type="search"
@@ -41,8 +38,6 @@ function App() {
                 <p>Search Value: {searchValue}</p>
                 <p>Movie: {movie}</p>
             </form>
-            <br />
-            <br />
         </>
     )
 }
