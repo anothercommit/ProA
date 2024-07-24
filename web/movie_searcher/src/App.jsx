@@ -25,7 +25,7 @@ function App() {
             fetch(`http://www.omdbapi.com/?apikey=1dcbcd87&s=${searchValue}`)
                 .then(res => res.json())
                 .then(movies => setSearchedMovies(movies.Search))
-                .then(console.log(searchedMovies))
+                .then(console.log(...searchedMovies))
             // .then(setSavedMovies([...savedMovies, searchedMovies[0]]))
         }
     }, [searchValue]);
