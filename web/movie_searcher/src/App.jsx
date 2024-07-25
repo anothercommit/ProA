@@ -1,34 +1,38 @@
 import { useState, useEffect } from 'react'
 import Card from './components/Card';
-
-// API key: 1dcbcd87
+import movieObject from './movieObject';
 
 function App() {
-    const [searchValue, setSearchValue] = useState('');
     const [searchedMovies, setSearchedMovies] = useState([]);
     const [savedMovies, setSavedMovies] = useState([]);
-    let movie = ''
+    const APIKEY = '1dcbcd87';
+    let movie = '';
+    let browse = false;
 
     const handleChange = (event) => {
-        movie = event.target.value
+        movie = event.target.value;
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        setSearchValue(movie)
+        event.preventDefault();
+        browse = true;
     };
 
     useEffect(() => {
-        console.log("useEffect")
-        if (searchValue) {
-            console.log(searchValue)
-            fetch(`http://www.omdbapi.com/?apikey=1dcbcd87&s=${searchValue}`)
+        console.log("useEffect");
+
+        if (browse) {
+            console.log(searchValue);
+
+            fetch(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${searchValue}`)
                 .then(res => res.json())
                 .then(movies => setSearchedMovies(movies.Search))
                 .then(console.log(...searchedMovies))
             // .then(setSavedMovies([...savedMovies, searchedMovies[0]]))
         }
-    }, [searchValue]);
+
+        browse = false;
+    }, [browse]);
 
     return (
         <>
@@ -43,9 +47,6 @@ function App() {
                 />
                 <button type='submit' onClick={handleSubmit}>Buscar</button>
             </form>
-
-            <p>Search Value: {searchValue}</p>
-            <p>Movie: {savedMovies[0]}</p>
         </>
     )
     // {savedMovies.forEach((m, id) => {
