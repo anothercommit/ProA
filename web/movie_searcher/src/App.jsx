@@ -47,11 +47,11 @@ function App() {
                 />
                 <button type='submit' onClick={handleSubmit}>Buscar</button>
             </form>
+            {movieObject.Search.forEach((m, id) => {
+                <Card key={id} title={m.Title} year={m.Year} />
+            })}
         </>
     )
-    // {savedMovies.forEach((m, id) => {
-    //     <Card key={id} title={m.Title} year={m.Year} />
-    // })}
 }
 
 export default App
