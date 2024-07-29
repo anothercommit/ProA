@@ -44,13 +44,17 @@ function App() {
       </form>
 
       <Input placeholder={"Filtrar por nombre"} onChange={hcFilter} />
-      <div>
-        {
-          searchedMovies.map((m, id) => (
-            < Card key={id} title={m.Title} year={m.Year} />
-          ))
-        }
-      </div>
+      <section className="bg-gray-900 dark:bg-gray-900">
+        <div className="container px-6 py-10 mx-auto">
+          <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
+            {
+              searchedMovies.map((m, id) => (
+                < Card key={id} title={m.Title} year={m.Year} />
+              ))
+            }
+          </div>
+        </div>
+      </section>
     </>
   )
 }
