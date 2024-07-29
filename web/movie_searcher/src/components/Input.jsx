@@ -1,11 +1,12 @@
-function Input() {
+function Input({ placeholder, onChange }) {
     return (
         <>
             <input
                 type="search"
                 id="movie-search"
                 // value={searchValue}
-                placeholder="Search..."
+                placeholder={placeholder}
+                onChange={onChange}
             />
         </>
     )
