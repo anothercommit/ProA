@@ -1,20 +1,19 @@
-function Card({ title, year, img }) {
+function Card({ title, plot, year, poster }) {
   return (
     <>
-      <div className="relative">
-        <img
-          className="object-cover object-center w-full h-64 rounded-lg lg:h-80"
-          src={img}
-        />
+      <div>
+        <img className="relative z-10 object-cover w-full rounded-md h-96" src={poster} alt="Poster of {title}" />
+
+        <div className="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
+          <p className="font-semibold text-gray-800 dark:text-white md:text-xl">
+            {title}
+          </p>
+          <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+            {plot}
+          </p>
+          <p className="mt-3 text-sm text-blue-500">{year}</p>
+        </div>
       </div>
-      <h3 className="mt-6 text-xl font-semibold text-white dark:text-white">
-        {title}
-      </h3>
-      <hr className="w-32 my-6 border-blue-500" />
-      <p className="text-sm text-gray-400 dark:text-gray-400">
-        {year}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugit dolorum amet dolores praesentium, alias nam? Tempore
-      </p>
     </>
   )
 }

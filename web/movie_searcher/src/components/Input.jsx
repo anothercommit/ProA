@@ -1,4 +1,8 @@
-function Input({ placeholder, onChange }) {
+function Input({ placeholder, variable }) {
+    const handleChange = (event) => {
+        variable = event.target.value;
+    }
+
     return (
         <>
             <input
@@ -6,7 +10,7 @@ function Input({ placeholder, onChange }) {
                 id="movie-search"
                 // value={searchValue}
                 placeholder={placeholder}
-                onChange={onChange}
+                onChange={handleChange}
             />
         </>
     )
