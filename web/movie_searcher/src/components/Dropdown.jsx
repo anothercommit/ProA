@@ -1,5 +1,6 @@
 const Dropdown = ({ movies, onSelect }) => {
   return (
+    { movies &&
     <div className="flex justify-center">
       <div className="relative inline-block">
         <div
@@ -20,6 +21,7 @@ const Dropdown = ({ movies, onSelect }) => {
         </div>
       </div>
     </div>
+    }
   );
 };
 
