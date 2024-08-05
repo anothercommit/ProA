@@ -44,18 +44,19 @@ def writePointHistory(nombre: str, puntaje: str):
                 start = content.index(nombre) + len(nombre) + 2
                 end = content.index("\n", start)
                 content = content[:start] + puntaje + content[end:]
-            except:
+            except Exception:
                 content += f"{nombre}: {puntaje}\n"
 
         with open(".log.txt", "w") as file:
             file.write(content)
-    except:
+    except Exception:
         with open(".log.txt", "w") as file:
             file.write(f"{nombre}: {puntaje}\n")
 
 
 def getRandomGame(dev: str):
-    url = f"https://api.rawg.io/api/games?key={API_KEY}&exclude_additions=true&developers={dev}"
+    url = f"https://api.rawg.io/api/games?key={
+        API_KEY}&exclude_additions=true&developers={dev}"
     print("-", end="")
     # print('\n', url)
     res = requests.get(url, headers=headers)

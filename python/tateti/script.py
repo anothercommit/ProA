@@ -5,7 +5,7 @@ def selFigura():
     while True:
         try:
             figura = int(input("Elija con qué jugar: (1) x | (2) o: "))
-        except:
+        except Exception:
             print("¡Debía insertar un número! Intente de nuevo")
             continue
 
@@ -34,7 +34,7 @@ def newMove(figura):
     while True:
         try:
             move = int(input(f"Poner {figura} en (1-9): "))
-        except:
+        except Exception:
             print("¡Eso no es un número! Intente de nuevo")
             continue
 
@@ -87,7 +87,7 @@ def playLoop():
             break
 
         elif checkEmpate():
-            print(f"¡Empate!")
+            print("¡Empate!")
             break
 
         currentP = 1 if currentP == 0 else 0
