@@ -11,13 +11,13 @@ function Tabla({ contactos, handleEliminar }) {
             <td>Número</td>
           </tr>
 
-          {contactos.map((contacto, i) => (
+          {contactos.map((contacto) => (
             <tr>
               <td>{contacto.nombre}</td>
               <td>{contacto.apellido}</td>
               <td>{contacto.numero}</td>
               <td>
-                <button onClick={() => handleEliminar(i)}>X</button>
+                <button onClick={() => handleEliminar(contacto.id)}>X</button>
               </td>
             </tr>
           ))}
