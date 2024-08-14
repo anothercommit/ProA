@@ -6,9 +6,9 @@ function Tabla({ contactos, handleEliminar }) {
 
         <tbody>
           <tr>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Número</td>
+            <td><b>Nombre</b></td>
+            <td><b>Apellido</b></td>
+            <td><b>Número</b></td>
           </tr>
 
           {contactos.map((contacto) => (
