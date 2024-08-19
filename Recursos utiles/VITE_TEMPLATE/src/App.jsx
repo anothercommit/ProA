@@ -8,6 +8,8 @@ function App() {
 
   const baseUrl = "http://localhost:3000"
 
+  const axios = require('axios');
+
   return (
     <>
     </>
