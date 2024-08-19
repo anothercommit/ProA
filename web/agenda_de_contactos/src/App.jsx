@@ -1,69 +1,47 @@
 "use strict";
 
 import { useState, useEffect } from "react"
-import axios from "axios";
 
 import Formulario from './components/Formulario.jsx'
 import Tabla from './components/Tabla.jsx'
+import { myAxios } from "./myAxios.jsx";
 
 function App() {
   const [actualizar, setActualizar] = useState(true);
   const [contactos, setContactos] = useState([]);
-  const [wrongFields, setWrongFields] = useState([false, false, false]);
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [numero, setNumero] = useState("");
 
-  const baseUrl = "http://localhost:3000"
+  const [fields, setFields] = useState(
+    { nombre: "", apellido: "", numero: "" });
+
+  const [wrongFields, setWrongFields] = useState(
+    { nombre: false, apellido: false, numero: false });
 
   useEffect(() => {
     if (actualizar)
-      axios.get(`${baseUrl}/contactos`)
+      myAxios.get(`/contactos`)
         .then(res => setContactos(res.data))
         .catch(error => console.error("Could't fetch /contactos\n", error))
     setActualizar(false);
   }, [actualizar])
 
-  const handleNombre = (event) => {
-    setNombre(event.target.value);
 
-    if (nombre && wrongFields[0])
-      setWrongFields([false, wrongFields[1], wrongFields[2]]);
+  const handleInput = (event, key) => {
+    let tempFields = fields;
+    tempFields[key] = event.target.value;
+    setFields(tempFields);
+
+    if (fields[key] && wrongFields[key])
+      updateState(key, false);
   };
 
-  const handleApellido = (event) => {
-    setApellido(event.target.value);
-
-    if (apellido && wrongFields[1])
-      setWrongFields([wrongFields[0], false, wrongFields[2]]);
+  const handleNumer = (number) => {
+    if number()
   };
 
-  const handleNumero = (event) => {
-    setNumero(event.target.value);
-
-    if (numero && wrongFields[2])
-      setWrongFields([wrongFields[0], wrongFields[1], false]);
-  };
-
-  const checkSubmit = () => {
-    let ok = true;
-
-    if (!nombre) {
-      setWrongFields([true, wrongFields[1], wrongFields[2]]);
-      ok = false;
-    }
-
-    if (!apellido) {
-      setWrongFields([wrongFields[0], true, wrongFields[2]]);
-      ok = false;
-    }
-
-    if (!numero) {
-      setWrongFields([wrongFields[0], wrongFields[1], true]);
-      ok = false;
-    }
-
-    return ok;
+  const updateState = (key, value) => {
+    let newWrongFields = wrongFields;
+    newWrongFields[key] = value;
+    setWrongFields(newWrongFields);
   }
 
   const handleSubmit = (event) => {
@@ -74,52 +52,65 @@ function App() {
 
     setActualizar(true);
 
-    let repetido = -1;
-    for (let i = 0; i < contactos.length; i++) {
-      if (contactos[i].apellido.toLowerCase() == apellido.toLowerCase()
-        && contactos[i].nombre.toLowerCase() == nombre.toLowerCase()) {
-        if (contactos[i].numero == numero) {
+    for (const contacto of contactos) {
+      if (contacto.apellido.toLowerCase() == fields.apellido.toLowerCase()
+        && contacto.nombre.toLowerCase() == fields.nombre.toLowerCase()) {
+
+        if (contacto.numero == fields.numero) {
           alert("El contacto ya existe");
           return;
         }
-        repetido = i;
-        break;
+
+        let confirmacion = confirm(
+          `El contacto ${fields.nombre} ${fields.apellido} ya existe ¿Desea modificar su número?`);
+
+        if (confirmacion) {
+          myAxios.patch(`/contactos/${contacto.id}`, { numero: fields.numero })
+            .then(res =>
+              console.log('Contacto actualizado:', res.data))
+            .catch(error => {
+              console.error('¡Error actualizando el contacto!', error);
+              console.error('valor de i:', i);
+              alert("No se pudo actualizar el contacto. Corrobore los datos ingresados y la lista de contactos");
+            })
+            .finally(() => setActualizar(true));
+        }
+
+        return;
       }
     }
 
-    let nuevoContacto = {
-      nombre: nombre,
-      apellido, apellido,
-      numero, numero,
-      id: contactos.length + 1
-    };
+    myAxios.post(`/contactos`,
+      { ...fields, id: contactos.length + 1 })
+      .then(response =>
+        console.log('Post created:', response.data))
+      .catch(error => {
+        console.error('There was an error creating the post!', error);
+      })
+      .finally(() => setActualizar(true));
+  }
 
-    if (repetido >= 0) {
-      let confirmacion = confirm(
-        `El contacto ${nombre} ${apellido} ya existe ¿Desea modificar su número?`);
-      if (confirmacion) {
-        axios.put(`${baseUrl}/contactos/${repetido + 1}`, nuevoContacto)
-          .then(res =>
-            console.log('Contacto actualizado:', res.data))
-          .catch(error => {
-            console.error('¡Error actualizando el contacto!', error);
-            alert("No se pudo actualizar el contacto. Corrobore los datos ingresados y la lista de contactos")ñ
-          })
-          .finally(() => setActualizar(true));
-      }
-    } else {
-      axios.post(`${baseUrl}/contactos`, nuevoContacto)
-        .then(response =>
-          console.log('Post created:', response.data))
-        .catch(error => {
-          console.error('There was an error creating the post!', error);
-        })
-        .finally(() => setActualizar(true));
+  const checkSubmit = () => {
+    let ok = true;
+
+    if (!fields.nombre) {
+      updateState("nombre", true);
+      ok = false;
+    } if (!fields.apellido) {
+      updateState("apellido", true);
+      ok = false;
+    } if (!fields.numero) {
+      updateState("numero", true);
+      ok = false;
     }
+
+    return ok;
   }
 
   const handleEliminar = (id) => {
-    axios.delete(`${baseUrl}/contactos/${id}`)
+    setActualizar(true);
+
+    myAxios.delete(`/contactos/${id}`)
       .then(response => {
         console.log('Post deleted:', response.data);
       })
@@ -134,11 +125,10 @@ function App() {
       <h1>Agenda de contactos</h1>
 
       <Formulario
-        handleNombre={handleNombre}
-        handleApellido={handleApellido}
-        handleNumero={handleNumero}
+        handleInput={handleInput}
         handleSubmit={handleSubmit}
-        status={wrongFields}
+        handleNumer={handleNumber}
+        fieldStatus={wrongFields}
       />
       <Tabla contactos={contactos} handleEliminar={handleEliminar} />
     </>
