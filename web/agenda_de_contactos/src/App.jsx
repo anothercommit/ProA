@@ -35,7 +35,7 @@ function App() {
   };
 
   const handleNumer = (number) => {
-    if number()
+    if number
   };
 
   const updateState = (key, value) => {
