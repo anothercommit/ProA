@@ -12,7 +12,6 @@ const ContactoSchema = new mongoose.Schema({
   numero: {
     type: String,
     required: true,
-    unique: true,
   },
 });
 
