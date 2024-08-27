@@ -3,7 +3,7 @@ import Contacto from "../models/Contacto.js";
 
 const router = express.Router();
 
-router.get("/contactos", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const contactos = await Contacto.find();
     res.status(200).json(contactos);

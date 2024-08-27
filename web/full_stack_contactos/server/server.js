@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import contactosRoute from "./routes/contactos.js";
-import crearContactoRoute from "./routes/crearContacto.js";
+import getRoutes from "./routes/getContacto.js";
+import modifyRoutes from "./routes/modifyContacto.js";
 
 dotenv.config();
 const app = express();
@@ -17,10 +17,10 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Couldn't connect to MongoDB...", err));
 
-app.use("/contactos", contactosRoute);
-app.use("/crearContacto", crearContactoRoute);
+app.use("/contactos", getRoutes);
+app.use("/contacto", modifyRoutes);
 
-app.get("/", (req, res) => res.send("¡Hola mundo!"));
+app.get("/", (_, res) => res.send("¡Hola mundo!"));
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
