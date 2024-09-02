@@ -1,21 +1,21 @@
 import mongoose from "mongoose";
 
-const ContactoSchema = new mongoose.Schema({
-  nombre: {
+const Contact = new mongoose.Schema({
+  name: {
     type: String,
     unique: false,
     required: true,
   },
-  apellido: {
+  lastName: {
     type: String,
     unique: false,
     required: false,
   },
-  numero: {
+  number: {
     type: String,
     unique: true,
     required: true,
   },
 });
 
-export default mongoose.model("Contacto", ContactoSchema);
+export default mongoose.model("Contact", Contact);
