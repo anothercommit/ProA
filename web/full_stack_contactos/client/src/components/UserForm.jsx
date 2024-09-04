@@ -1,17 +1,27 @@
 import { useState } from "react";
 import myAxios from "../myAxios.js";
 
-function Form({ type }) {
+function UserForm({ type }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const url = type == "Log In" ? "/login" : "/signup";
+
+    console.log(name, password);
 
     myAxios
       .post(url, { name: name, password: password })
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        alert("Usuario creado existosamente");
+        console.log(res.data);
+      })
+      .catch((err) => {
+        if (err.response.status == 406)
+          alert("Ya existe un usuario con ese nombre");
+        console.log(err);
+      });
   };
 
   return (
@@ -36,4 +46,4 @@ function Form({ type }) {
   );
 }
 
-export default Form;
+export default UserForm;
