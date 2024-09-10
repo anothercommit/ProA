@@ -4,7 +4,6 @@ import myAxios from "../myAxios.js";
 
 export default function LogIn() {
     const [logged, setLogged] = useState(false);
-    const users = useRef([]);
     const name = useRef("");
     const password = useRef("");
     const [logInTry, setLogInTry] = useState(false);
@@ -20,9 +19,8 @@ export default function LogIn() {
         event.preventDefault();
 
         myAxios.get("/users/")
-            .then((res) => users.current = res.data)
-            .then(() => {
-                users.current.forEach((user) => {
+            .then((res) => {
+                res.data.forEach((user) => {
                     if (
                         user.username == name.current &&
                         user.password == password.current

@@ -1,13 +1,17 @@
 {
   "users": [
-    { "id": 0, "username": "joaco", "password": "joaco" }
+    {
+      "id": 0,
+      "username": "joaco",
+      "password": "joaco"
+    }
   ],
   "tasks": [
     {
       "id": 0,
       "title": "task number 0",
       "description": "the first task",
-      "done": true
+      "done": false
     }
   ]
 }

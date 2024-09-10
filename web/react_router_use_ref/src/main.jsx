@@ -8,6 +8,7 @@ import LogIn from "./routes/LogIn.jsx";
 import Root from "./routes/root.jsx";
 import Tasks from "./routes/Tasks.jsx";
 import Task from "./routes/Task.jsx";
+import CreateTask from "./routes/CreateTask.jsx";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
                 element: <Task />,
             },
         ],
+    },
+    {
+        path: "/tasks/create",
+        element: <CreateTask />,
     },
 ]);
 
