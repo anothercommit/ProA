@@ -2,13 +2,8 @@
   "usuarios": [
     {
       "id": 1,
-      "name": "place holder 1",
-      "email": "placeholder@gmail.com"
-    },
-    {
-      "id": 2,
       "name": "joaco",
-      "email": "joaco"
+      "email": "a"
     }
   ]
 }
