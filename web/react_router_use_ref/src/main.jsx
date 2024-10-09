@@ -7,6 +7,7 @@ import "./index.css";
 import LogIn from "./routes/LogIn.jsx";
 import Root from "./routes/root.jsx";
 import Tasks from "./routes/Tasks.jsx";
+import Task from "./routes/Task.jsx";
 
 const router = createBrowserRouter([
     {
