@@ -1,7 +1,9 @@
-export default function Task({ name }) {
+export default function Task({ task }) {
     return (
         <>
-            <h3>{name}</h3>
+            <div>
+                <h3>{task.title}</h3>
+            </div>
         </>
     );
 }
