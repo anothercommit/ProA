@@ -3,6 +3,8 @@ export default function Task({ task }) {
         <>
             <div>
                 <h3>{task.title}</h3>
+                <p>{task.desc}</p>
+                <input type="checkbox" />
             </div>
         </>
     );

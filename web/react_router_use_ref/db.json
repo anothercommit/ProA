@@ -6,7 +6,7 @@
     {
       "id": 0,
       "title": "task number 0",
-      "description": "the first task",
+      "desc": "the first task",
       "done": true
     }
   ]
