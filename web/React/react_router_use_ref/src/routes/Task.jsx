@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import myAxios from "../myAxios.js";
 
 export default function Task({ task }) {
@@ -12,10 +11,6 @@ export default function Task({ task }) {
 
     return (
         <>
-            <button>
-                <Link to="/tasks/create">Create task</Link>
-            </button>
-
             <div class="tasksContainer">
                 <label htmlFor="task">
                     <input

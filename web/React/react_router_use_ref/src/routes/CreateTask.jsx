@@ -7,11 +7,15 @@ export default function CreateTask() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        // Agarrar la id de la ultima task y ponerle esa+1 a la nueva
+        myAxios.post("/tasks", { title: title, desc: desc });
     };
 
     return (
         <>
             <h1>Create task</h1>
+
             <form action="POST" onSubmit={handleSubmit}>
                 <label htmlFor="title">{"Title "}</label>
                 <input
@@ -27,6 +31,8 @@ export default function CreateTask() {
                 >
                     Description
                 </textarea>
+
+                <input type="submit" />
             </form>
         </>
     );

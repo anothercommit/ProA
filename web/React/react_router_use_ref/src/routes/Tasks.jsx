@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import myAxios from "../myAxios.js";
 
 // Modules
@@ -16,6 +17,11 @@ export default function Tasks() {
     return (
         <>
             <h1>Your tasks</h1>
+
+            <button>
+                <Link to="/tasks/create">Create task</Link>
+            </button>
+
             {tasks.map((task) => <Task task={task} key={task.id} />)}
         </>
     );

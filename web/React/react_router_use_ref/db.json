@@ -10,13 +10,8 @@
     {
       "id": 0,
       "title": "task number 0",
-<<<<<<< HEAD
-      "description": "the first task",
-      "done": false
-=======
       "desc": "the first task",
-      "done": true
->>>>>>> c0280bc54ab10236feffec4824e278c7fbaa90ed
+      "done": false
     }
   ]
 }
