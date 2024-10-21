@@ -20,7 +20,7 @@ export default class Stack {
   }
 
   top() {
-    return this.elements[this.cola.length - 1];
+    return this.elements[this.elements.length - 1];
   }
 
   bottom() {

@@ -1,51 +1,50 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// classes
-import Stack from "./utils/Stack.js";
 import Queue from "./utils/Queue.js";
+import Stack from "./utils/Stack.js";
 
-// modules
-import Form from "./components/Form.jsx";
-import StructureElement from "./components/StructureElement.jsx";
+import StructForm from "./components/StructForm.jsx";
 
 export default function App() {
-    const [structure, setStructure] = useState({
-        type: "",
-        content: new Stack(),
-    });
+    const [rerender, setRerender] = useState(false);
+    const structName = useRef("stack");
+    const struct = useRef(new Stack());
 
-    const handleSelectStructure = (value) => {
-        setStructure({
-            type: value,
-            content: value == "stack" ? new Stack() : new Queue(),
-        });
+    useEffect(() => {
+        if (rerender) setRerender(false);
+    }, [rerender]);
+
+    const handleSelect = (value) => {
+        struct.current = value == "queue" ? new Queue() : new Stack();
+        structName.current = value;
     };
 
-    const handleAdd = (value) => {
-        if (structure.type == "stack") {
-            structure.content.push(value);
-        } else {
-            structure.content.enqueue(value);
+    const handleAdd = (e) => {
+        structName == "stack"
+            ? struct.current.push(e)
+            : struct.current.enqueue(e);
+
+        setRerender(true);
+    };
+
+    const handleRemove = () => {
+        if (struct.current.elements.length) {
+            structName == "stack"
+                ? struct.current.pop(e)
+                : struct.current.dequeue(e);
+            setRerender(true);
         }
     };
 
     return (
         <>
-            <Form
-                handler={handleSelectStructure}
-                handleAdd={handleAdd}
+            <StructForm
+                select={handleSelect}
+                add={handleAdd}
+                remove={handleRemove}
             />
 
-            <h2>{structure.type}</h2>
-            <div style={{ border: "solid 2px", maxWidth: "fit-content" }}>
-                {
-                    //
-                    structure.content.elements.map((el, key) => (
-                        <StructureElement value={el} key={key} />
-                    ))
-                    //
-                }
-            </div>
+            {struct.current.elements.map((e, k) => <p key={k}>{e}</p>)}
         </>
     );
 }
