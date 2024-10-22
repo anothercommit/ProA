@@ -19,6 +19,7 @@ export default function StructForm({ select, add, remove }) {
                         <input
                             type="radio"
                             value="stack"
+                            name="struct"
                             onChange={handleSelect}
                         />
                         Stack
@@ -28,6 +29,7 @@ export default function StructForm({ select, add, remove }) {
                         <input
                             type="radio"
                             value="queue"
+                            name="struct"
                             onChange={handleSelect}
                         />
                         Queue
@@ -42,11 +44,12 @@ export default function StructForm({ select, add, remove }) {
                         ref={inputRef}
                         style={{ width: "100px" }}
                     />
-                    <submit
+                    <button
+                        type="button"
                         onClick={() => add(inputRef.current.value)}
                     >
                         +
-                    </submit>
+                    </button>
 
                     <button type="button" onClick={() => remove()}>-</button>
                 </fieldset>

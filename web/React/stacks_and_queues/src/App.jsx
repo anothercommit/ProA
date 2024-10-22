@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
+// Classes
 import Queue from "./utils/Queue.js";
 import Stack from "./utils/Stack.js";
 
+// Modules
 import StructForm from "./components/StructForm.jsx";
+import Pila from "./components/Pila.jsx";
+import Cola from "./components/Cola.jsx";
 
 export default function App() {
     const [rerender, setRerender] = useState(false);
@@ -17,10 +21,11 @@ export default function App() {
     const handleSelect = (value) => {
         struct.current = value == "queue" ? new Queue() : new Stack();
         structName.current = value;
+        setRerender(true);
     };
 
     const handleAdd = (e) => {
-        structName == "stack"
+        structName.current == "stack"
             ? struct.current.push(e)
             : struct.current.enqueue(e);
 
@@ -29,9 +34,9 @@ export default function App() {
 
     const handleRemove = () => {
         if (struct.current.elements.length) {
-            structName == "stack"
-                ? struct.current.pop(e)
-                : struct.current.dequeue(e);
+            structName.current == "stack"
+                ? struct.current.pop()
+                : struct.current.dequeue();
             setRerender(true);
         }
     };
@@ -44,7 +49,9 @@ export default function App() {
                 remove={handleRemove}
             />
 
-            {struct.current.elements.map((e, k) => <p key={k}>{e}</p>)}
+            {structName.current == "stack"
+                ? <Pila elements={struct.current.elements} />
+                : <Cola elements={struct.current.elements} />}
         </>
     );
 }
