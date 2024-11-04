@@ -5,6 +5,39 @@ export default class BinaryTree {
         this.root = null;
     }
 
+    postOrder(node = this.root) {
+        if (!node) return;
+
+        return (
+            this.inOrder(node.left) +
+            this.inOrder(node.right) +
+            node.value +
+            " "
+        );
+    }
+
+    preOrder(node = this.root) {
+        if (!node) return;
+
+        return (
+            node.value +
+            " " +
+            this.inOrder(node.left) +
+            this.inOrder(node.right)
+        );
+    }
+
+    inOrder(node = this.root) {
+        if (!node) return "";
+
+        return (
+            this.inOrder(node.left) +
+            node.value +
+            " " +
+            this.inOrder(node.right)
+        );
+    }
+
     insert() {
         this.root
             ? this._insertRecursively(new Node(arguments[0]))
@@ -35,9 +68,9 @@ export default class BinaryTree {
         return value > currentNode.value
             ? currentNode.right
                 ? this._findRecursively(value, currentNode.right)
-                : true
+                : false
             : currentNode.left
               ? this._findRecursively(value, currentNode.left)
-              : true;
+              : false;
     }
 }
