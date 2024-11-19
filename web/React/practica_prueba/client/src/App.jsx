@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import {
-    getTasks,
-    postTask,
-    patchTitleTask,
-    patchCompletedTask,
-} from "./CRUD.js";
+import { getTasks, postTask } from "./CRUD.js";
+
+// Modules
+import TaskForm from "./components/TaskForm.jsx";
+import TaskList from "./components/TaskList.jsx";
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -18,7 +17,18 @@ function App() {
         setUpdate(false);
     }, [update]);
 
-    return <></>;
+    const handleTaskForm = (taskTitle) => {
+        postTask(tasks[tasks.length - 1].id + 1, taskTitle).then(() =>
+            setUpdate(true),
+        );
+    };
+
+    return (
+        <>
+            <TaskForm handler={handleTaskForm} />
+            <TaskList tasks={tasks} />
+        </>
+    );
 }
 
 export default App;

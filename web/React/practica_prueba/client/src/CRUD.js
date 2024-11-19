@@ -18,15 +18,8 @@ export function postTask(id, title) {
     });
 }
 
-export function patchCompletedTask(id) {
-    return new Promise((reject) => {
-        myAxios
-            .get(`${id}`)
-            .then((task) => {
-                myAxios.patch(`${id}`, { completed: !task.data.completed });
-            })
-            .catch((err) => reject(err));
-    });
+export function patchCompletedTask(id, completed) {
+    return new Promise(() => myAxios.patch(`${id}`, { completed: !completed }));
 }
 
 export function patchTitleTask(id, newTitle) {
