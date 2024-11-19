@@ -1,16 +1,24 @@
 import { useState, useEffect } from "react";
+import {
+    getTasks,
+    postTask,
+    patchTitleTask,
+    patchCompletedTask,
+} from "./CRUD.js";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [update, setUpdate] = useState(true);
+    const [tasks, setTasks] = useState([]);
+    const [update, setUpdate] = useState(true);
 
-  useEffect(() => {
-    // TODO: hacer la peticion con axios
-    let tasks;
-    setTasks(tasks);
-  }, [update]);
+    useEffect(() => {
+        getTasks()
+            .then((res) => setTasks(res))
+            .catch((err) => console.log(err));
 
-  return <></>;
+        setUpdate(false);
+    }, [update]);
+
+    return <></>;
 }
 
 export default App;

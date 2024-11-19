@@ -2,8 +2,18 @@
   "tasks": [
     {
       "id": 1,
-      "title": "json-server",
-      "completed": "typicode"
+      "title": "titulo",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "titulo",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "anashe",
+      "completed": false
     }
   ]
 }
