@@ -1,0 +1,5 @@
+.container {
+    display: flexbox;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
